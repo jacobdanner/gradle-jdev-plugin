@@ -1,0 +1,267 @@
+:buildSrc:clean
+:buildSrc:compileJava UP-TO-DATE
+:buildSrc:compileGroovy UP-TO-DATE
+:buildSrc:processResources UP-TO-DATE
+:buildSrc:classes UP-TO-DATE
+:buildSrc:jar
+:buildSrc:assemble
+:buildSrc:compileTestJava UP-TO-DATE
+:buildSrc:compileTestGroovy UP-TO-DATE
+:buildSrc:processTestResources UP-TO-DATE
+:buildSrc:testClasses UP-TO-DATE
+:buildSrc:test UP-TO-DATE
+:buildSrc:check UP-TO-DATE
+:buildSrc:build
+*********************************
+Client
+D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build
+TASKS -> [project ':Client':[task ':Client:show']]
+allprojects -> [project ':Client']
+ant -> org.gradle.api.internal.project.DefaultAntBuilder@7659bf1
+antBuilderFactory -> org.gradle.api.internal.project.DefaultAntBuilderFactory@1fe0ef02
+artifacts -> org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@686b7ca7
+asDynamicObject -> org.gradle.api.internal.ExtensibleDynamicObject@68c4ed7f
+buildDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build
+buildFile -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle
+buildScriptSource -> org.gradle.groovy.scripts.UriScriptSource@58c46295
+buildscript -> org.gradle.api.internal.initialization.DefaultScriptHandler@452451ba
+childProjects -> 
+class -> class org.gradle.api.internal.project.DefaultProject_Decorated
+components -> []
+configurationActions -> org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@73dcd558
+configurations -> []
+convention -> org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8
+defaultTasks -> 
+dependencies -> org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@4759d881
+dependsOnProjects -> []
+depth -> 1
+description -> null
+displayName -> root project 'SimpleJDevJava'
+ext -> org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@2282c175
+extensions -> org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8
+fileResolver -> org.gradle.api.internal.file.BaseDirFileResolver@366afa06
+gradle -> build 'SimpleJDevJava'
+group -> SimpleJDevJava
+implicitTasks -> []
+inheritedScope -> org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@2944bbd3
+logger -> org.gradle.api.logging.Logging$LoggerImpl@5f872ecf
+logging -> org.gradle.logging.internal.DefaultLoggingManager@24124908
+mayImplementMissingMethods -> false
+mayImplementMissingProperties -> false
+metaClass -> org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]]
+module -> org.gradle.api.internal.artifacts.ProjectBackedModule@2b3138d7
+name -> Client
+parent -> root project 'SimpleJDevJava'
+parentIdentifier -> root project 'SimpleJDevJava'
+path -> :Client
+plugins -> []
+project -> project ':Client'
+projectDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client
+projectEvaluationBroadcaster -> ProjectEvaluationListener broadcast
+projectEvaluator -> org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168
+projectRegistry -> org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0
+properties -> 
+	resources -> org.gradle.api.internal.resources.DefaultResourceHandler@113d8793
+	fileResolver -> org.gradle.api.internal.file.BaseDirFileResolver@366afa06
+	buildFile -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle
+	show -> task ':Client:show'
+	extensions -> org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8
+	rootDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava
+	ext -> org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@2282c175
+	projectDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client
+	description -> null
+	implicitTasks -> []
+	projectRegistry -> org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0
+	ant -> org.gradle.api.internal.project.DefaultAntBuilder@7659bf1
+	defaultTasks -> []
+	buildDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build
+	services -> ProjectScopeServices
+	status -> release
+	allprojects -> [project ':Client']
+	childProjects -> [:]
+	convention -> org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8
+	parent -> root project 'SimpleJDevJava'
+	class -> class org.gradle.api.internal.project.DefaultProject_Decorated
+	buildscript -> org.gradle.api.internal.initialization.DefaultScriptHandler@452451ba
+	projectEvaluationBroadcaster -> ProjectEvaluationListener broadcast
+	logging -> org.gradle.logging.internal.DefaultLoggingManager@24124908
+	properties -> [resources:org.gradle.api.internal.resources.DefaultResourceHandler@113d8793, fileResolver:org.gradle.api.internal.file.BaseDirFileResolver@366afa06, buildFile:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle, show:task ':Client:show', extensions:org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8, rootDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava, ext:org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@2282c175, projectDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client, description:null, implicitTasks:[], projectRegistry:org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0, ant:org.gradle.api.internal.project.DefaultAntBuilder@7659bf1, defaultTasks:[], buildDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build, services:ProjectScopeServices, status:release, allprojects:[project ':Client'], childProjects:[:], convention:org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8, parent:root project 'SimpleJDevJava', class:class org.gradle.api.internal.project.DefaultProject_Decorated, buildscript:org.gradle.api.internal.initialization.DefaultScriptHandler@452451ba, projectEvaluationBroadcaster:ProjectEvaluationListener broadcast, logging:org.gradle.logging.internal.DefaultLoggingManager@24124908, properties:(this Map), depth:1, standardOutputCapture:org.gradle.logging.internal.DefaultLoggingManager@24124908, project:project ':Client', subprojects:[], buildScriptSource:org.gradle.groovy.scripts.UriScriptSource@58c46295, gradle:build 'SimpleJDevJava', components:[], projectEvaluator:org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168, repositories:[], plugins:[], dependsOnProjects:[], state:project state 'NOT EXECUTED', artifacts:org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@686b7ca7, version:unspecified, metaClass:org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]], dependencies:org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@4759d881, name:Client, path::Client, logger:org.gradle.api.logging.Logging$LoggerImpl@5f872ecf, parentIdentifier:root project 'SimpleJDevJava', module:org.gradle.api.internal.artifacts.ProjectBackedModule@2b3138d7, configurationActions:org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@73dcd558, tasks:[task ':Client:show'], rootProject:root project 'SimpleJDevJava', inheritedScope:org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@2944bbd3, scriptPluginFactory:org.gradle.configuration.DefaultScriptPluginFactory@b5a9289, mayImplementMissingMethods:false, asDynamicObject:org.gradle.api.internal.ExtensibleDynamicObject@68c4ed7f, antBuilderFactory:org.gradle.api.internal.project.DefaultAntBuilderFactory@1fe0ef02, configurations:[], mayImplementMissingProperties:false, group:SimpleJDevJava, displayName:root project 'SimpleJDevJava']
+	depth -> 1
+	standardOutputCapture -> org.gradle.logging.internal.DefaultLoggingManager@24124908
+	project -> project ':Client'
+	subprojects -> []
+	buildScriptSource -> org.gradle.groovy.scripts.UriScriptSource@58c46295
+	gradle -> build 'SimpleJDevJava'
+	components -> []
+	projectEvaluator -> org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168
+	repositories -> []
+	plugins -> []
+	dependsOnProjects -> []
+	state -> project state 'NOT EXECUTED'
+	artifacts -> org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@686b7ca7
+	version -> unspecified
+	metaClass -> org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]]
+	dependencies -> org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@4759d881
+	name -> Client
+	path -> :Client
+	logger -> org.gradle.api.logging.Logging$LoggerImpl@5f872ecf
+	parentIdentifier -> root project 'SimpleJDevJava'
+	module -> org.gradle.api.internal.artifacts.ProjectBackedModule@2b3138d7
+	configurationActions -> org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@73dcd558
+	tasks -> [task ':Client:show']
+	rootProject -> root project 'SimpleJDevJava'
+	inheritedScope -> org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@2944bbd3
+	scriptPluginFactory -> org.gradle.configuration.DefaultScriptPluginFactory@b5a9289
+	mayImplementMissingMethods -> false
+	asDynamicObject -> org.gradle.api.internal.ExtensibleDynamicObject@68c4ed7f
+	antBuilderFactory -> org.gradle.api.internal.project.DefaultAntBuilderFactory@1fe0ef02
+	configurations -> []
+	mayImplementMissingProperties -> false
+	group -> SimpleJDevJava
+	displayName -> root project 'SimpleJDevJava'
+repositories -> 
+resources -> org.gradle.api.internal.resources.DefaultResourceHandler@113d8793
+rootDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava
+rootProject -> root project 'SimpleJDevJava'
+scriptPluginFactory -> org.gradle.configuration.DefaultScriptPluginFactory@b5a9289
+services -> ProjectScopeServices
+show -> task ':Client:show'
+standardOutputCapture -> org.gradle.logging.internal.DefaultLoggingManager@24124908
+state -> project state 'NOT EXECUTED'
+status -> release
+subprojects -> []
+tasks -> [task ':Client:show']
+version -> unspecified
+{allprojects=[project ':Client'], ant=org.gradle.api.internal.project.DefaultAntBuilder@7659bf1, antBuilderFactory=org.gradle.api.internal.project.DefaultAntBuilderFactory@1fe0ef02, artifacts=org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@686b7ca7, asDynamicObject=org.gradle.api.internal.ExtensibleDynamicObject@68c4ed7f, buildDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build, buildFile=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle, buildScriptSource=org.gradle.groovy.scripts.UriScriptSource@58c46295, buildscript=org.gradle.api.internal.initialization.DefaultScriptHandler@452451ba, childProjects={}, class=class org.gradle.api.internal.project.DefaultProject_Decorated, components=[], configurationActions=org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@73dcd558, configurations=[], convention=org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8, defaultTasks=[], dependencies=org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@4759d881, dependsOnProjects=[], depth=1, description=null, displayName=root project 'SimpleJDevJava', ext=org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@2282c175, extensions=org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8, fileResolver=org.gradle.api.internal.file.BaseDirFileResolver@366afa06, gradle=build 'SimpleJDevJava', group=SimpleJDevJava, implicitTasks=[], inheritedScope=org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@2944bbd3, logger=org.gradle.api.logging.Logging$LoggerImpl@5f872ecf, logging=org.gradle.logging.internal.DefaultLoggingManager@24124908, mayImplementMissingMethods=false, mayImplementMissingProperties=false, metaClass=org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]], module=org.gradle.api.internal.artifacts.ProjectBackedModule@2b3138d7, name=Client, parent=root project 'SimpleJDevJava', parentIdentifier=root project 'SimpleJDevJava', path=:Client, plugins=[], project=project ':Client', projectDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client, projectEvaluationBroadcaster=ProjectEvaluationListener broadcast, projectEvaluator=org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168, projectRegistry=org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0, properties={resources=org.gradle.api.internal.resources.DefaultResourceHandler@113d8793, fileResolver=org.gradle.api.internal.file.BaseDirFileResolver@366afa06, buildFile=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle, show=task ':Client:show', extensions=org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8, rootDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava, ext=org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@2282c175, projectDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client, description=null, implicitTasks=[], projectRegistry=org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0, ant=org.gradle.api.internal.project.DefaultAntBuilder@7659bf1, defaultTasks=[], buildDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build, services=ProjectScopeServices, status=release, allprojects=[project ':Client'], childProjects={}, convention=org.gradle.api.internal.plugins.DefaultConvention@6efbd9c8, parent=root project 'SimpleJDevJava', class=class org.gradle.api.internal.project.DefaultProject_Decorated, buildscript=org.gradle.api.internal.initialization.DefaultScriptHandler@452451ba, projectEvaluationBroadcaster=ProjectEvaluationListener broadcast, logging=org.gradle.logging.internal.DefaultLoggingManager@24124908, properties=(this Map), depth=1, standardOutputCapture=org.gradle.logging.internal.DefaultLoggingManager@24124908, project=project ':Client', subprojects=[], buildScriptSource=org.gradle.groovy.scripts.UriScriptSource@58c46295, gradle=build 'SimpleJDevJava', components=[], projectEvaluator=org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168, repositories=[], plugins=[], dependsOnProjects=[], state=project state 'NOT EXECUTED', artifacts=org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@686b7ca7, version=unspecified, metaClass=org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]], dependencies=org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@4759d881, name=Client, path=:Client, logger=org.gradle.api.logging.Logging$LoggerImpl@5f872ecf, parentIdentifier=root project 'SimpleJDevJava', module=org.gradle.api.internal.artifacts.ProjectBackedModule@2b3138d7, configurationActions=org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@73dcd558, tasks=[task ':Client:show'], rootProject=root project 'SimpleJDevJava', inheritedScope=org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@2944bbd3, scriptPluginFactory=org.gradle.configuration.DefaultScriptPluginFactory@b5a9289, mayImplementMissingMethods=false, asDynamicObject=org.gradle.api.internal.ExtensibleDynamicObject@68c4ed7f, antBuilderFactory=org.gradle.api.internal.project.DefaultAntBuilderFactory@1fe0ef02, configurations=[], mayImplementMissingProperties=false, group=SimpleJDevJava, displayName=root project 'SimpleJDevJava'}, repositories=[], resources=org.gradle.api.internal.resources.DefaultResourceHandler@113d8793, rootDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava, rootProject=root project 'SimpleJDevJava', scriptPluginFactory=org.gradle.configuration.DefaultScriptPluginFactory@b5a9289, services=ProjectScopeServices, show=task ':Client:show', standardOutputCapture=org.gradle.logging.internal.DefaultLoggingManager@24124908, state=project state 'NOT EXECUTED', status=release, subprojects=[], tasks=[task ':Client:show'], version=unspecified}
+*********************************
+*********************************
+JavaAppMultiSrc
+D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build
+TASKS -> [project ':JavaAppMultiSrc':[task ':JavaAppMultiSrc:show']]
+allprojects -> [project ':JavaAppMultiSrc']
+ant -> org.gradle.api.internal.project.DefaultAntBuilder@51ac7c23
+antBuilderFactory -> org.gradle.api.internal.project.DefaultAntBuilderFactory@130a07b9
+artifacts -> org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@77810c72
+asDynamicObject -> org.gradle.api.internal.ExtensibleDynamicObject@39584da9
+buildDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build
+buildFile -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build.gradle
+buildScriptSource -> org.gradle.groovy.scripts.UriScriptSource@5452afa8
+buildscript -> org.gradle.api.internal.initialization.DefaultScriptHandler@8a69d8
+childProjects -> 
+class -> class org.gradle.api.internal.project.DefaultProject_Decorated
+components -> []
+configurationActions -> org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@7f2ae42e
+configurations -> []
+convention -> org.gradle.api.internal.plugins.DefaultConvention@58eac93b
+defaultTasks -> 
+dependencies -> org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@1e416e18
+dependsOnProjects -> []
+depth -> 1
+description -> null
+displayName -> root project 'SimpleJDevJava'
+ext -> org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@59a2f92c
+extensions -> org.gradle.api.internal.plugins.DefaultConvention@58eac93b
+fileResolver -> org.gradle.api.internal.file.BaseDirFileResolver@5a94e5ad
+gradle -> build 'SimpleJDevJava'
+group -> SimpleJDevJava
+implicitTasks -> []
+inheritedScope -> org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@6572ef50
+logger -> org.gradle.api.logging.Logging$LoggerImpl@5f872ecf
+logging -> org.gradle.logging.internal.DefaultLoggingManager@5cbda138
+mayImplementMissingMethods -> false
+mayImplementMissingProperties -> false
+metaClass -> org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]]
+module -> org.gradle.api.internal.artifacts.ProjectBackedModule@25a39319
+name -> JavaAppMultiSrc
+parent -> root project 'SimpleJDevJava'
+parentIdentifier -> root project 'SimpleJDevJava'
+path -> :JavaAppMultiSrc
+plugins -> []
+project -> project ':JavaAppMultiSrc'
+projectDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc
+projectEvaluationBroadcaster -> ProjectEvaluationListener broadcast
+projectEvaluator -> org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168
+projectRegistry -> org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0
+properties -> 
+	resources -> org.gradle.api.internal.resources.DefaultResourceHandler@160e619d
+	fileResolver -> org.gradle.api.internal.file.BaseDirFileResolver@5a94e5ad
+	buildFile -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build.gradle
+	show -> task ':JavaAppMultiSrc:show'
+	extensions -> org.gradle.api.internal.plugins.DefaultConvention@58eac93b
+	rootDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava
+	ext -> org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@59a2f92c
+	projectDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc
+	description -> null
+	implicitTasks -> []
+	projectRegistry -> org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0
+	ant -> org.gradle.api.internal.project.DefaultAntBuilder@51ac7c23
+	defaultTasks -> []
+	buildDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build
+	services -> ProjectScopeServices
+	status -> release
+	allprojects -> [project ':JavaAppMultiSrc']
+	childProjects -> [:]
+	convention -> org.gradle.api.internal.plugins.DefaultConvention@58eac93b
+	parent -> root project 'SimpleJDevJava'
+	class -> class org.gradle.api.internal.project.DefaultProject_Decorated
+	buildscript -> org.gradle.api.internal.initialization.DefaultScriptHandler@8a69d8
+	projectEvaluationBroadcaster -> ProjectEvaluationListener broadcast
+	logging -> org.gradle.logging.internal.DefaultLoggingManager@5cbda138
+	properties -> [resources:org.gradle.api.internal.resources.DefaultResourceHandler@160e619d, fileResolver:org.gradle.api.internal.file.BaseDirFileResolver@5a94e5ad, buildFile:D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build.gradle, show:task ':JavaAppMultiSrc:show', extensions:org.gradle.api.internal.plugins.DefaultConvention@58eac93b, rootDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava, ext:org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@59a2f92c, projectDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc, description:null, implicitTasks:[], projectRegistry:org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0, ant:org.gradle.api.internal.project.DefaultAntBuilder@51ac7c23, defaultTasks:[], buildDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build, services:ProjectScopeServices, status:release, allprojects:[project ':JavaAppMultiSrc'], childProjects:[:], convention:org.gradle.api.internal.plugins.DefaultConvention@58eac93b, parent:root project 'SimpleJDevJava', class:class org.gradle.api.internal.project.DefaultProject_Decorated, buildscript:org.gradle.api.internal.initialization.DefaultScriptHandler@8a69d8, projectEvaluationBroadcaster:ProjectEvaluationListener broadcast, logging:org.gradle.logging.internal.DefaultLoggingManager@5cbda138, properties:(this Map), depth:1, standardOutputCapture:org.gradle.logging.internal.DefaultLoggingManager@5cbda138, project:project ':JavaAppMultiSrc', subprojects:[], buildScriptSource:org.gradle.groovy.scripts.UriScriptSource@5452afa8, gradle:build 'SimpleJDevJava', components:[], projectEvaluator:org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168, repositories:[], plugins:[], dependsOnProjects:[], state:project state 'NOT EXECUTED', artifacts:org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@77810c72, version:unspecified, metaClass:org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]], dependencies:org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@1e416e18, name:JavaAppMultiSrc, path::JavaAppMultiSrc, logger:org.gradle.api.logging.Logging$LoggerImpl@5f872ecf, parentIdentifier:root project 'SimpleJDevJava', module:org.gradle.api.internal.artifacts.ProjectBackedModule@25a39319, configurationActions:org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@7f2ae42e, tasks:[task ':JavaAppMultiSrc:show'], rootProject:root project 'SimpleJDevJava', inheritedScope:org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@6572ef50, scriptPluginFactory:org.gradle.configuration.DefaultScriptPluginFactory@b5a9289, mayImplementMissingMethods:false, asDynamicObject:org.gradle.api.internal.ExtensibleDynamicObject@39584da9, antBuilderFactory:org.gradle.api.internal.project.DefaultAntBuilderFactory@130a07b9, configurations:[], mayImplementMissingProperties:false, group:SimpleJDevJava, displayName:root project 'SimpleJDevJava']
+	depth -> 1
+	standardOutputCapture -> org.gradle.logging.internal.DefaultLoggingManager@5cbda138
+	project -> project ':JavaAppMultiSrc'
+	subprojects -> []
+	buildScriptSource -> org.gradle.groovy.scripts.UriScriptSource@5452afa8
+	gradle -> build 'SimpleJDevJava'
+	components -> []
+	projectEvaluator -> org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168
+	repositories -> []
+	plugins -> []
+	dependsOnProjects -> []
+	state -> project state 'NOT EXECUTED'
+	artifacts -> org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@77810c72
+	version -> unspecified
+	metaClass -> org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]]
+	dependencies -> org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@1e416e18
+	name -> JavaAppMultiSrc
+	path -> :JavaAppMultiSrc
+	logger -> org.gradle.api.logging.Logging$LoggerImpl@5f872ecf
+	parentIdentifier -> root project 'SimpleJDevJava'
+	module -> org.gradle.api.internal.artifacts.ProjectBackedModule@25a39319
+	configurationActions -> org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@7f2ae42e
+	tasks -> [task ':JavaAppMultiSrc:show']
+	rootProject -> root project 'SimpleJDevJava'
+	inheritedScope -> org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@6572ef50
+	scriptPluginFactory -> org.gradle.configuration.DefaultScriptPluginFactory@b5a9289
+	mayImplementMissingMethods -> false
+	asDynamicObject -> org.gradle.api.internal.ExtensibleDynamicObject@39584da9
+	antBuilderFactory -> org.gradle.api.internal.project.DefaultAntBuilderFactory@130a07b9
+	configurations -> []
+	mayImplementMissingProperties -> false
+	group -> SimpleJDevJava
+	displayName -> root project 'SimpleJDevJava'
+repositories -> 
+resources -> org.gradle.api.internal.resources.DefaultResourceHandler@160e619d
+rootDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava
+rootProject -> root project 'SimpleJDevJava'
+scriptPluginFactory -> org.gradle.configuration.DefaultScriptPluginFactory@b5a9289
+services -> ProjectScopeServices
+show -> task ':JavaAppMultiSrc:show'
+standardOutputCapture -> org.gradle.logging.internal.DefaultLoggingManager@5cbda138
+state -> project state 'NOT EXECUTED'
+status -> release
+subprojects -> []
+tasks -> [task ':JavaAppMultiSrc:show']
+version -> unspecified
+{allprojects=[project ':JavaAppMultiSrc'], ant=org.gradle.api.internal.project.DefaultAntBuilder@51ac7c23, antBuilderFactory=org.gradle.api.internal.project.DefaultAntBuilderFactory@130a07b9, artifacts=org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@77810c72, asDynamicObject=org.gradle.api.internal.ExtensibleDynamicObject@39584da9, buildDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build, buildFile=D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build.gradle, buildScriptSource=org.gradle.groovy.scripts.UriScriptSource@5452afa8, buildscript=org.gradle.api.internal.initialization.DefaultScriptHandler@8a69d8, childProjects={}, class=class org.gradle.api.internal.project.DefaultProject_Decorated, components=[], configurationActions=org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@7f2ae42e, configurations=[], convention=org.gradle.api.internal.plugins.DefaultConvention@58eac93b, defaultTasks=[], dependencies=org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@1e416e18, dependsOnProjects=[], depth=1, description=null, displayName=root project 'SimpleJDevJava', ext=org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@59a2f92c, extensions=org.gradle.api.internal.plugins.DefaultConvention@58eac93b, fileResolver=org.gradle.api.internal.file.BaseDirFileResolver@5a94e5ad, gradle=build 'SimpleJDevJava', group=SimpleJDevJava, implicitTasks=[], inheritedScope=org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@6572ef50, logger=org.gradle.api.logging.Logging$LoggerImpl@5f872ecf, logging=org.gradle.logging.internal.DefaultLoggingManager@5cbda138, mayImplementMissingMethods=false, mayImplementMissingProperties=false, metaClass=org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]], module=org.gradle.api.internal.artifacts.ProjectBackedModule@25a39319, name=JavaAppMultiSrc, parent=root project 'SimpleJDevJava', parentIdentifier=root project 'SimpleJDevJava', path=:JavaAppMultiSrc, plugins=[], project=project ':JavaAppMultiSrc', projectDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc, projectEvaluationBroadcaster=ProjectEvaluationListener broadcast, projectEvaluator=org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168, projectRegistry=org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0, properties={resources=org.gradle.api.internal.resources.DefaultResourceHandler@160e619d, fileResolver=org.gradle.api.internal.file.BaseDirFileResolver@5a94e5ad, buildFile=D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build.gradle, show=task ':JavaAppMultiSrc:show', extensions=org.gradle.api.internal.plugins.DefaultConvention@58eac93b, rootDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava, ext=org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@59a2f92c, projectDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc, description=null, implicitTasks=[], projectRegistry=org.gradle.api.internal.project.DefaultProjectRegistry@499fa9b0, ant=org.gradle.api.internal.project.DefaultAntBuilder@51ac7c23, defaultTasks=[], buildDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\JavaAppMultiSrc\build, services=ProjectScopeServices, status=release, allprojects=[project ':JavaAppMultiSrc'], childProjects={}, convention=org.gradle.api.internal.plugins.DefaultConvention@58eac93b, parent=root project 'SimpleJDevJava', class=class org.gradle.api.internal.project.DefaultProject_Decorated, buildscript=org.gradle.api.internal.initialization.DefaultScriptHandler@8a69d8, projectEvaluationBroadcaster=ProjectEvaluationListener broadcast, logging=org.gradle.logging.internal.DefaultLoggingManager@5cbda138, properties=(this Map), depth=1, standardOutputCapture=org.gradle.logging.internal.DefaultLoggingManager@5cbda138, project=project ':JavaAppMultiSrc', subprojects=[], buildScriptSource=org.gradle.groovy.scripts.UriScriptSource@5452afa8, gradle=build 'SimpleJDevJava', components=[], projectEvaluator=org.gradle.configuration.project.LifecycleProjectEvaluator@2c8ac168, repositories=[], plugins=[], dependsOnProjects=[], state=project state 'NOT EXECUTED', artifacts=org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@77810c72, version=unspecified, metaClass=org.codehaus.groovy.runtime.HandleMetaClass@2c78beb8[groovy.lang.MetaClassImpl@2c78beb8[class org.gradle.api.internal.project.DefaultProject_Decorated]], dependencies=org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@1e416e18, name=JavaAppMultiSrc, path=:JavaAppMultiSrc, logger=org.gradle.api.logging.Logging$LoggerImpl@5f872ecf, parentIdentifier=root project 'SimpleJDevJava', module=org.gradle.api.internal.artifacts.ProjectBackedModule@25a39319, configurationActions=org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@7f2ae42e, tasks=[task ':JavaAppMultiSrc:show'], rootProject=root project 'SimpleJDevJava', inheritedScope=org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@6572ef50, scriptPluginFactory=org.gradle.configuration.DefaultScriptPluginFactory@b5a9289, mayImplementMissingMethods=false, asDynamicObject=org.gradle.api.internal.ExtensibleDynamicObject@39584da9, antBuilderFactory=org.gradle.api.internal.project.DefaultAntBuilderFactory@130a07b9, configurations=[], mayImplementMissingProperties=false, group=SimpleJDevJava, displayName=root project 'SimpleJDevJava'}, repositories=[], resources=org.gradle.api.internal.resources.DefaultResourceHandler@160e619d, rootDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava, rootProject=root project 'SimpleJDevJava', scriptPluginFactory=org.gradle.configuration.DefaultScriptPluginFactory@b5a9289, services=ProjectScopeServices, show=task ':JavaAppMultiSrc:show', standardOutputCapture=org.gradle.logging.internal.DefaultLoggingManager@5cbda138, state=project state 'NOT EXECUTED', status=release, subprojects=[], tasks=[task ':JavaAppMultiSrc:show'], version=unspecified}
+*********************************
+Creating properties on demand (a.k.a. dynamic properties) has been deprecated and is scheduled to be removed in Gradle 2.0. Please read http://gradle.org/docs/current/dsl/org.gradle.api.plugins.ExtraPropertiesExtension.html for information on the replacement for dynamic properties.
+Deprecated dynamic property: "jprFile" on "project ':Client'", value: "D:\o\jdevadf\gradle-pr...".
+Deprecated dynamic property: "srcDir" on "source set 'main'", value: "[D:\o\jdevadf\gradle-p...".
+:Client:show UP-TO-DATE
+:JavaAppMultiSrc:show UP-TO-DATE
+
+BUILD SUCCESSFUL
+
+Total time: 7.935 secs

@@ -1,0 +1,78 @@
+//apply plugin: 'java'
+/*
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+  */
+
+subprojects {
+  println project.name
+  //println "*********************************"
+
+  //project.sourceSets.main.each { println "$it -> ${it.getClass().getName()}" }
+}
+
+allprojects {
+  task show << {
+
+    println "*********************************"
+    println project.name
+    println project.buildDir
+    println "Project: $project"
+    println "Name: $name"
+    println "Path: $path"
+    println "Project directory: $projectDir"
+    println "Build directory: $buildDir"
+    println "Version: $version"
+    println "Group: $project.group"
+    println "Description: $project.description"
+    println "AntBuilder: $ant"
+    println "-------------------------------"
+    println "TASKS -> ${project.getAllTasks(true)}"
+    /*
+    println project.properties.sort().each { key, val ->
+      if (val instanceof Map)
+      {
+        println "$key -> "
+        val.each { k, v -> println "\t$k -> $v" }
+      } else if (val instanceof List)
+      {
+        println "$key -> "
+        val.each { v -> println "\t-> $v" }
+      } else
+      {
+        println "$key -> $val"
+      }
+    } */
+  }
+  task printInfo << {
+    println "This is ${project.name}"
+  }
+}
+
+
+subprojects {
+  printInfo << {
+    println "has buildDir $buildDir"
+    println "has srcDir "
+    //project.sourceSets.each{ println it }
+
+  }
+}
+
+project(':Client').printInfo << {
+  println "Has leaves"
+}
+
+project(':JavaAppMultiSrc') {
+  printInfo.doLast {
+    println 'Smells nice'
+  }
+}

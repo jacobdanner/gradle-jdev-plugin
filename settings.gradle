@@ -1,0 +1,24 @@
+
+Set<String> getProjectsFromWorkspace(File jwsFile)
+{
+  //println "parsing $jwsFile"
+  def jws = new XmlSlurper(false, false).parse(jwsFile)
+  Set<File> jprDir = jws.list.find { it.@n == 'listOfChildren' }.hash.url.collect { z -> def jpr = file(z.@path.text())
+    return jpr.getParentFile()}
+
+  assert jprDir.every { it.isDirectory() }
+  //def paths= jws.list.hash.url.collect{z -> z.@path}
+  //println "jprs -> $jprDir"
+  def paths = jprDir.findAll{ file(it).listFiles().any{ it.getName().endsWith(".gradle") } }.collect{"${it.getName()}"}
+
+  //println "paths -> $paths"
+  return paths
+}
+
+Set<String> projects = getProjectsFromWorkspace(file("SimpleJDevJava.jws"))
+
+//include projects.collect{"'$it'"}.join(",")
+projects.each { pro ->
+  "about to include $pro"
+  include pro
+}

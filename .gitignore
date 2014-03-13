@@ -1,0 +1,13 @@
+.idea
+.gradle
+*/target/*
+examples/
+SimpleJDevJava/
+*.pdf
+*/userHome/*
+*/userHome
+maven/
+userHome/
+buildSrc/build/
+buildSrc/.gradle/
+build/

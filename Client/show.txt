@@ -1,0 +1,240 @@
+:buildSrc:compileJava UP-TO-DATE
+:buildSrc:compileGroovy UP-TO-DATE
+:buildSrc:processResources UP-TO-DATE
+:buildSrc:classes UP-TO-DATE
+:buildSrc:jar UP-TO-DATE
+:buildSrc:assemble UP-TO-DATE
+:buildSrc:compileTestJava UP-TO-DATE
+:buildSrc:compileTestGroovy UP-TO-DATE
+:buildSrc:processTestResources UP-TO-DATE
+:buildSrc:testClasses UP-TO-DATE
+:buildSrc:test UP-TO-DATE
+:buildSrc:check UP-TO-DATE
+:buildSrc:build UP-TO-DATE
+Creating properties on demand (a.k.a. dynamic properties) has been deprecated and is scheduled to be removed in Gradle 2.0. Please read http://gradle.org/docs/current/dsl/org.gradle.api.plugins.ExtraPropertiesExtension.html for information on the replacement for dynamic properties.
+Deprecated dynamic property: "jprFile" on "project ':Client'", value: "D:\o\jdevadf\gradle-pr...".
+Deprecated dynamic property: "srcDir" on "source set 'main'", value: "[D:\o\jdevadf\gradle-p...".
+Client
+allprojects -> [project ':Client']
+ant -> org.gradle.api.internal.project.DefaultAntBuilder@1886ad24
+antBuilderFactory -> org.gradle.api.internal.project.DefaultAntBuilderFactory@31d12310
+apiDocTitle -> Client 1.0 API
+archivesBaseName -> Client
+artifacts -> org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@195508fd
+asDynamicObject -> org.gradle.api.internal.ExtensibleDynamicObject@1dc12709
+assemble -> task ':Client:assemble'
+binaries -> [classes 'main', classes 'test']
+build -> task ':Client:build'
+buildDependents -> task ':Client:buildDependents'
+buildDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes
+buildFile -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle
+buildNeeded -> task ':Client:buildNeeded'
+buildScriptSource -> org.gradle.groovy.scripts.UriScriptSource@1b906ce8
+buildTasks -> 
+	-> build
+buildscript -> org.gradle.api.internal.initialization.DefaultScriptHandler@34d475c1
+check -> task ':Client:check'
+childProjects -> 
+class -> class org.gradle.api.internal.project.DefaultProject_Decorated
+classes -> task ':Client:classes'
+clean -> task ':Client:clean'
+compileGroovy -> task ':Client:compileGroovy'
+compileJava -> task ':Client:compileJava'
+compileTestGroovy -> task ':Client:compileTestGroovy'
+compileTestJava -> task ':Client:compileTestJava'
+components -> [org.gradle.api.internal.java.JavaLibrary@3c17a401]
+configurationActions -> org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@34105c79
+configurations -> [configuration ':Client:archives', configuration ':Client:compile', configuration ':Client:default', configuration ':Client:groovy', configuration ':Client:runtime', configuration ':Client:testCompile', configuration ':Client:testRuntime']
+convention -> org.gradle.api.internal.plugins.DefaultConvention@1e2726a3
+defaultArtifacts -> org.gradle.api.internal.plugins.DefaultArtifactPublicationSet_Decorated@1c59a6cc
+defaultTasks -> 
+dependencies -> org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@3d112885
+dependencyCacheDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\dependency-cache
+dependencyCacheDirName -> dependency-cache
+dependsOnProjects -> []
+depth -> 1
+description -> null
+displayName -> root project 'SimpleJDevJava'
+distsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\distributions
+distsDirName -> distributions
+docsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\docs
+docsDirName -> docs
+ext -> org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@174b1f9b
+extensions -> org.gradle.api.internal.plugins.DefaultConvention@1e2726a3
+fileResolver -> org.gradle.api.internal.file.BaseDirFileResolver@4508050f
+gradle -> build 'SimpleJDevJava'
+groovyRuntime -> org.gradle.api.tasks.GroovyRuntime_Decorated@11843f31
+groovydoc -> task ':Client:groovydoc'
+group -> SimpleJDevJava
+implicitTasks -> [task ':Client:dependencies', task ':Client:dependencyInsight', task ':Client:help', task ':Client:projects', task ':Client:properties', task ':Client:tasks']
+inheritedScope -> org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@150b2f3
+jar -> task ':Client:jar'
+javadoc -> task ':Client:javadoc'
+jprFile -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\Client.jpr
+libsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\libs
+libsDirName -> libs
+logger -> org.gradle.api.logging.Logging$LoggerImpl@59147031
+logging -> org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7
+manifest -> org.gradle.api.java.archives.internal.DefaultManifest@62565d57
+mayImplementMissingMethods -> false
+mayImplementMissingProperties -> false
+metaClass -> org.codehaus.groovy.runtime.HandleMetaClass@140a2d31[groovy.lang.MetaClassImpl@140a2d31[class org.gradle.api.internal.project.DefaultProject_Decorated]]
+metaInf -> 
+module -> org.gradle.api.internal.artifacts.ProjectBackedModule@281cf63e
+name -> Client
+parent -> root project 'SimpleJDevJava'
+parentIdentifier -> root project 'SimpleJDevJava'
+path -> :Client
+plugins -> [org.gradle.api.plugins.HelpTasksPlugin@1267237c, org.gradle.api.plugins.BasePlugin@74742635, org.gradle.api.plugins.ReportingBasePlugin@75789d4d, org.gradle.language.base.plugins.LanguageBasePlugin@480136e5, org.gradle.language.jvm.plugins.JvmLanguagePlugin@2e04a041, org.gradle.api.plugins.JavaLanguagePlugin@2ed4040b, org.gradle.api.plugins.JavaBasePlugin@cb06677, org.gradle.api.plugins.JavaPlugin@77b10188, org.gradle.api.plugins.GroovyBasePlugin@56ee36, org.gradle.api.plugins.GroovyPlugin@635bfd56]
+processResources -> task ':Client:processResources'
+processTestResources -> task ':Client:processTestResources'
+project -> project ':Client'
+projectDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client
+projectEvaluationBroadcaster -> ProjectEvaluationListener broadcast
+projectEvaluator -> org.gradle.configuration.project.LifecycleProjectEvaluator@56a7505
+projectRegistry -> org.gradle.api.internal.project.DefaultProjectRegistry@10289e0a
+properties -> 
+	distsDirName -> distributions
+	fileResolver -> org.gradle.api.internal.file.BaseDirFileResolver@4508050f
+	compileGroovy -> task ':Client:compileGroovy'
+	test -> task ':Client:test'
+	buildFile -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle
+	javadoc -> task ':Client:javadoc'
+	rootDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava
+	extensions -> org.gradle.api.internal.plugins.DefaultConvention@1e2726a3
+	compileJava -> task ':Client:compileJava'
+	processTestResources -> task ':Client:processTestResources'
+	implicitTasks -> [task ':Client:dependencies', task ':Client:dependencyInsight', task ':Client:help', task ':Client:projects', task ':Client:properties', task ':Client:tasks']
+	compileTestJava -> task ':Client:compileTestJava'
+	projectRegistry -> org.gradle.api.internal.project.DefaultProjectRegistry@10289e0a
+	defaultTasks -> []
+	buildDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes
+	services -> ProjectScopeServices
+	parent -> root project 'SimpleJDevJava'
+	convention -> org.gradle.api.internal.plugins.DefaultConvention@1e2726a3
+	projectEvaluationBroadcaster -> ProjectEvaluationListener broadcast
+	metaInf -> []
+	standardOutputCapture -> org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7
+	project -> project ':Client'
+	testResultsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\test-results
+	sourceCompatibility -> 1.5
+	libsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\libs
+	dependencyCacheDirName -> dependency-cache
+	reporting -> org.gradle.api.reporting.ReportingExtension_Decorated@41f854e5
+	buildScriptSource -> org.gradle.groovy.scripts.UriScriptSource@1b906ce8
+	components -> [org.gradle.api.internal.java.JavaLibrary@3c17a401]
+	sourceSets -> [source set 'main', source set 'test']
+	projectEvaluator -> org.gradle.configuration.project.LifecycleProjectEvaluator@56a7505
+	buildDependents -> task ':Client:buildDependents'
+	repositories -> [org.gradle.api.internal.artifacts.repositories.DefaultMavenArtifactRepository_Decorated@168da839]
+	testReportDirName -> tests
+	apiDocTitle -> Client 1.0 API
+	plugins -> [org.gradle.api.plugins.HelpTasksPlugin@1267237c, org.gradle.api.plugins.BasePlugin@74742635, org.gradle.api.plugins.ReportingBasePlugin@75789d4d, org.gradle.language.base.plugins.LanguageBasePlugin@480136e5, org.gradle.language.jvm.plugins.JvmLanguagePlugin@2e04a041, org.gradle.api.plugins.JavaLanguagePlugin@2ed4040b, org.gradle.api.plugins.JavaBasePlugin@cb06677, org.gradle.api.plugins.JavaPlugin@77b10188, org.gradle.api.plugins.GroovyBasePlugin@56ee36, org.gradle.api.plugins.GroovyPlugin@635bfd56]
+	manifest -> org.gradle.api.java.archives.internal.DefaultManifest@62565d57
+	reportsDirName -> reports
+	build -> task ':Client:build'
+	artifacts -> org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@195508fd
+	version -> 1.0
+	testClasses -> task ':Client:testClasses'
+	clean -> task ':Client:clean'
+	dependencies -> org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@3d112885
+	logger -> org.gradle.api.logging.Logging$LoggerImpl@59147031
+	processResources -> task ':Client:processResources'
+	groovyRuntime -> org.gradle.api.tasks.GroovyRuntime_Decorated@11843f31
+	classes -> task ':Client:classes'
+	buildNeeded -> task ':Client:buildNeeded'
+	module -> org.gradle.api.internal.artifacts.ProjectBackedModule@281cf63e
+	docsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\docs
+	rootProject -> root project 'SimpleJDevJava'
+	inheritedScope -> org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@150b2f3
+	scriptPluginFactory -> org.gradle.configuration.DefaultScriptPluginFactory@2e1f41c0
+	assemble -> task ':Client:assemble'
+	mayImplementMissingMethods -> false
+	antBuilderFactory -> org.gradle.api.internal.project.DefaultAntBuilderFactory@31d12310
+	mayImplementMissingProperties -> false
+	resources -> org.gradle.api.internal.resources.DefaultResourceHandler@615bbe8
+	dependencyCacheDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\dependency-cache
+	show -> task ':Client:show'
+	sources -> [[source set 'main:java', source set 'main:resources'], [source set 'test:java', source set 'test:resources']]
+	ext -> org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@174b1f9b
+	defaultArtifacts -> org.gradle.api.internal.plugins.DefaultArtifactPublicationSet_Decorated@1c59a6cc
+	projectDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client
+	jar -> task ':Client:jar'
+	description -> null
+	ant -> org.gradle.api.internal.project.DefaultAntBuilder@1886ad24
+	groovydoc -> task ':Client:groovydoc'
+	status -> integration
+	allprojects -> [project ':Client']
+	libsDirName -> libs
+	archivesBaseName -> Client
+	distsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\distributions
+	childProjects -> [:]
+	class -> class org.gradle.api.internal.project.DefaultProject_Decorated
+	jprFile -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\Client.jpr
+	logging -> org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7
+	buildscript -> org.gradle.api.internal.initialization.DefaultScriptHandler@34d475c1
+	docsDirName -> docs
+	properties -> [distsDirName:distributions, fileResolver:org.gradle.api.internal.file.BaseDirFileResolver@4508050f, compileGroovy:task ':Client:compileGroovy', test:task ':Client:test', buildFile:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle, javadoc:task ':Client:javadoc', rootDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava, extensions:org.gradle.api.internal.plugins.DefaultConvention@1e2726a3, compileJava:task ':Client:compileJava', processTestResources:task ':Client:processTestResources', implicitTasks:[task ':Client:dependencies', task ':Client:dependencyInsight', task ':Client:help', task ':Client:projects', task ':Client:properties', task ':Client:tasks'], compileTestJava:task ':Client:compileTestJava', projectRegistry:org.gradle.api.internal.project.DefaultProjectRegistry@10289e0a, defaultTasks:[], buildDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes, services:ProjectScopeServices, parent:root project 'SimpleJDevJava', convention:org.gradle.api.internal.plugins.DefaultConvention@1e2726a3, projectEvaluationBroadcaster:ProjectEvaluationListener broadcast, metaInf:[], standardOutputCapture:org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7, project:project ':Client', testResultsDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\test-results, sourceCompatibility:1.5, libsDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\libs, dependencyCacheDirName:dependency-cache, reporting:org.gradle.api.reporting.ReportingExtension_Decorated@41f854e5, buildScriptSource:org.gradle.groovy.scripts.UriScriptSource@1b906ce8, components:[org.gradle.api.internal.java.JavaLibrary@3c17a401], sourceSets:[source set 'main', source set 'test'], projectEvaluator:org.gradle.configuration.project.LifecycleProjectEvaluator@56a7505, buildDependents:task ':Client:buildDependents', repositories:[org.gradle.api.internal.artifacts.repositories.DefaultMavenArtifactRepository_Decorated@168da839], testReportDirName:tests, apiDocTitle:Client 1.0 API, plugins:[org.gradle.api.plugins.HelpTasksPlugin@1267237c, org.gradle.api.plugins.BasePlugin@74742635, org.gradle.api.plugins.ReportingBasePlugin@75789d4d, org.gradle.language.base.plugins.LanguageBasePlugin@480136e5, org.gradle.language.jvm.plugins.JvmLanguagePlugin@2e04a041, org.gradle.api.plugins.JavaLanguagePlugin@2ed4040b, org.gradle.api.plugins.JavaBasePlugin@cb06677, org.gradle.api.plugins.JavaPlugin@77b10188, org.gradle.api.plugins.GroovyBasePlugin@56ee36, org.gradle.api.plugins.GroovyPlugin@635bfd56], manifest:org.gradle.api.java.archives.internal.DefaultManifest@62565d57, reportsDirName:reports, build:task ':Client:build', artifacts:org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@195508fd, version:1.0, testClasses:task ':Client:testClasses', clean:task ':Client:clean', dependencies:org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@3d112885, logger:org.gradle.api.logging.Logging$LoggerImpl@59147031, processResources:task ':Client:processResources', groovyRuntime:org.gradle.api.tasks.GroovyRuntime_Decorated@11843f31, classes:task ':Client:classes', buildNeeded:task ':Client:buildNeeded', module:org.gradle.api.internal.artifacts.ProjectBackedModule@281cf63e, docsDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\docs, rootProject:root project 'SimpleJDevJava', inheritedScope:org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@150b2f3, scriptPluginFactory:org.gradle.configuration.DefaultScriptPluginFactory@2e1f41c0, assemble:task ':Client:assemble', mayImplementMissingMethods:false, antBuilderFactory:org.gradle.api.internal.project.DefaultAntBuilderFactory@31d12310, mayImplementMissingProperties:false, resources:org.gradle.api.internal.resources.DefaultResourceHandler@615bbe8, dependencyCacheDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\dependency-cache, show:task ':Client:show', sources:[[source set 'main:java', source set 'main:resources'], [source set 'test:java', source set 'test:resources']], ext:org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@174b1f9b, defaultArtifacts:org.gradle.api.internal.plugins.DefaultArtifactPublicationSet_Decorated@1c59a6cc, projectDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client, jar:task ':Client:jar', description:null, ant:org.gradle.api.internal.project.DefaultAntBuilder@1886ad24, groovydoc:task ':Client:groovydoc', status:integration, allprojects:[project ':Client'], libsDirName:libs, archivesBaseName:Client, distsDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\distributions, childProjects:[:], class:class org.gradle.api.internal.project.DefaultProject_Decorated, jprFile:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\Client.jpr, logging:org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7, buildscript:org.gradle.api.internal.initialization.DefaultScriptHandler@34d475c1, docsDirName:docs, properties:(this Map), depth:1, subprojects:[], buildTasks:[build], targetCompatibility:1.5, gradle:build 'SimpleJDevJava', dependsOnProjects:[], state:project state 'EXECUTING', reportsDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports, metaClass:org.codehaus.groovy.runtime.HandleMetaClass@140a2d31[groovy.lang.MetaClassImpl@140a2d31[class org.gradle.api.internal.project.DefaultProject_Decorated]], name:Client, path::Client, parentIdentifier:root project 'SimpleJDevJava', testReportDir:D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports\tests, check:task ':Client:check', binaries:[classes 'main', classes 'test'], configurationActions:org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@34105c79, tasks:[task ':Client:assemble', task ':Client:build', task ':Client:buildDependents', task ':Client:buildNeeded', task ':Client:check', task ':Client:classes', task ':Client:clean', task ':Client:compileGroovy', task ':Client:compileJava', task ':Client:compileTestGroovy', task ':Client:compileTestJava', task ':Client:groovydoc', task ':Client:jar', task ':Client:javadoc', task ':Client:processResources', task ':Client:processTestResources', task ':Client:show', task ':Client:test', task ':Client:testClasses'], rebuildTasks:[clean, build], asDynamicObject:org.gradle.api.internal.ExtensibleDynamicObject@1dc12709, testResultsDirName:test-results, runtimeClasspath:file collection, compileTestGroovy:task ':Client:compileTestGroovy', configurations:[configuration ':Client:archives', configuration ':Client:compile', configuration ':Client:default', configuration ':Client:groovy', configuration ':Client:runtime', configuration ':Client:testCompile', configuration ':Client:testRuntime'], group:SimpleJDevJava, displayName:root project 'SimpleJDevJava']
+	depth -> 1
+	subprojects -> []
+	buildTasks -> [build]
+	targetCompatibility -> 1.5
+	gradle -> build 'SimpleJDevJava'
+	dependsOnProjects -> []
+	state -> project state 'EXECUTING'
+	reportsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports
+	metaClass -> org.codehaus.groovy.runtime.HandleMetaClass@140a2d31[groovy.lang.MetaClassImpl@140a2d31[class org.gradle.api.internal.project.DefaultProject_Decorated]]
+	name -> Client
+	path -> :Client
+	parentIdentifier -> root project 'SimpleJDevJava'
+	testReportDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports\tests
+	check -> task ':Client:check'
+	binaries -> [classes 'main', classes 'test']
+	configurationActions -> org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@34105c79
+	tasks -> [task ':Client:assemble', task ':Client:build', task ':Client:buildDependents', task ':Client:buildNeeded', task ':Client:check', task ':Client:classes', task ':Client:clean', task ':Client:compileGroovy', task ':Client:compileJava', task ':Client:compileTestGroovy', task ':Client:compileTestJava', task ':Client:groovydoc', task ':Client:jar', task ':Client:javadoc', task ':Client:processResources', task ':Client:processTestResources', task ':Client:show', task ':Client:test', task ':Client:testClasses']
+	rebuildTasks -> [clean, build]
+	asDynamicObject -> org.gradle.api.internal.ExtensibleDynamicObject@1dc12709
+	testResultsDirName -> test-results
+	runtimeClasspath -> file collection
+	compileTestGroovy -> task ':Client:compileTestGroovy'
+	configurations -> [configuration ':Client:archives', configuration ':Client:compile', configuration ':Client:default', configuration ':Client:groovy', configuration ':Client:runtime', configuration ':Client:testCompile', configuration ':Client:testRuntime']
+	group -> SimpleJDevJava
+	displayName -> root project 'SimpleJDevJava'
+rebuildTasks -> 
+	-> clean
+	-> build
+reporting -> org.gradle.api.reporting.ReportingExtension_Decorated@41f854e5
+reportsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports
+reportsDirName -> reports
+repositories -> 
+	-> org.gradle.api.internal.artifacts.repositories.DefaultMavenArtifactRepository_Decorated@168da839
+resources -> org.gradle.api.internal.resources.DefaultResourceHandler@615bbe8
+rootDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava
+rootProject -> root project 'SimpleJDevJava'
+runtimeClasspath -> file collection
+scriptPluginFactory -> org.gradle.configuration.DefaultScriptPluginFactory@2e1f41c0
+services -> ProjectScopeServices
+show -> task ':Client:show'
+sourceCompatibility -> 1.5
+sourceSets -> [source set 'main', source set 'test']
+sources -> [[source set 'main:java', source set 'main:resources'], [source set 'test:java', source set 'test:resources']]
+standardOutputCapture -> org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7
+state -> project state 'EXECUTING'
+status -> integration
+subprojects -> []
+targetCompatibility -> 1.5
+tasks -> [task ':Client:assemble', task ':Client:build', task ':Client:buildDependents', task ':Client:buildNeeded', task ':Client:check', task ':Client:classes', task ':Client:clean', task ':Client:compileGroovy', task ':Client:compileJava', task ':Client:compileTestGroovy', task ':Client:compileTestJava', task ':Client:groovydoc', task ':Client:jar', task ':Client:javadoc', task ':Client:processResources', task ':Client:processTestResources', task ':Client:show', task ':Client:test', task ':Client:testClasses']
+test -> task ':Client:test'
+testClasses -> task ':Client:testClasses'
+testReportDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports\tests
+testReportDirName -> tests
+testResultsDir -> D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\test-results
+testResultsDirName -> test-results
+version -> 1.0
+{allprojects=[project ':Client'], ant=org.gradle.api.internal.project.DefaultAntBuilder@1886ad24, antBuilderFactory=org.gradle.api.internal.project.DefaultAntBuilderFactory@31d12310, apiDocTitle=Client 1.0 API, archivesBaseName=Client, artifacts=org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@195508fd, asDynamicObject=org.gradle.api.internal.ExtensibleDynamicObject@1dc12709, assemble=task ':Client:assemble', binaries=[classes 'main', classes 'test'], build=task ':Client:build', buildDependents=task ':Client:buildDependents', buildDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes, buildFile=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle, buildNeeded=task ':Client:buildNeeded', buildScriptSource=org.gradle.groovy.scripts.UriScriptSource@1b906ce8, buildTasks=[build], buildscript=org.gradle.api.internal.initialization.DefaultScriptHandler@34d475c1, check=task ':Client:check', childProjects={}, class=class org.gradle.api.internal.project.DefaultProject_Decorated, classes=task ':Client:classes', clean=task ':Client:clean', compileGroovy=task ':Client:compileGroovy', compileJava=task ':Client:compileJava', compileTestGroovy=task ':Client:compileTestGroovy', compileTestJava=task ':Client:compileTestJava', components=[org.gradle.api.internal.java.JavaLibrary@3c17a401], configurationActions=org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@34105c79, configurations=[configuration ':Client:archives', configuration ':Client:compile', configuration ':Client:default', configuration ':Client:groovy', configuration ':Client:runtime', configuration ':Client:testCompile', configuration ':Client:testRuntime'], convention=org.gradle.api.internal.plugins.DefaultConvention@1e2726a3, defaultArtifacts=org.gradle.api.internal.plugins.DefaultArtifactPublicationSet_Decorated@1c59a6cc, defaultTasks=[], dependencies=org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@3d112885, dependencyCacheDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\dependency-cache, dependencyCacheDirName=dependency-cache, dependsOnProjects=[], depth=1, description=null, displayName=root project 'SimpleJDevJava', distsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\distributions, distsDirName=distributions, docsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\docs, docsDirName=docs, ext=org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@174b1f9b, extensions=org.gradle.api.internal.plugins.DefaultConvention@1e2726a3, fileResolver=org.gradle.api.internal.file.BaseDirFileResolver@4508050f, gradle=build 'SimpleJDevJava', groovyRuntime=org.gradle.api.tasks.GroovyRuntime_Decorated@11843f31, groovydoc=task ':Client:groovydoc', group=SimpleJDevJava, implicitTasks=[task ':Client:dependencies', task ':Client:dependencyInsight', task ':Client:help', task ':Client:projects', task ':Client:properties', task ':Client:tasks'], inheritedScope=org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@150b2f3, jar=task ':Client:jar', javadoc=task ':Client:javadoc', jprFile=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\Client.jpr, libsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\libs, libsDirName=libs, logger=org.gradle.api.logging.Logging$LoggerImpl@59147031, logging=org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7, manifest=org.gradle.api.java.archives.internal.DefaultManifest@62565d57, mayImplementMissingMethods=false, mayImplementMissingProperties=false, metaClass=org.codehaus.groovy.runtime.HandleMetaClass@140a2d31[groovy.lang.MetaClassImpl@140a2d31[class org.gradle.api.internal.project.DefaultProject_Decorated]], metaInf=[], module=org.gradle.api.internal.artifacts.ProjectBackedModule@281cf63e, name=Client, parent=root project 'SimpleJDevJava', parentIdentifier=root project 'SimpleJDevJava', path=:Client, plugins=[org.gradle.api.plugins.HelpTasksPlugin@1267237c, org.gradle.api.plugins.BasePlugin@74742635, org.gradle.api.plugins.ReportingBasePlugin@75789d4d, org.gradle.language.base.plugins.LanguageBasePlugin@480136e5, org.gradle.language.jvm.plugins.JvmLanguagePlugin@2e04a041, org.gradle.api.plugins.JavaLanguagePlugin@2ed4040b, org.gradle.api.plugins.JavaBasePlugin@cb06677, org.gradle.api.plugins.JavaPlugin@77b10188, org.gradle.api.plugins.GroovyBasePlugin@56ee36, org.gradle.api.plugins.GroovyPlugin@635bfd56], processResources=task ':Client:processResources', processTestResources=task ':Client:processTestResources', project=project ':Client', projectDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client, projectEvaluationBroadcaster=ProjectEvaluationListener broadcast, projectEvaluator=org.gradle.configuration.project.LifecycleProjectEvaluator@56a7505, projectRegistry=org.gradle.api.internal.project.DefaultProjectRegistry@10289e0a, properties={distsDirName=distributions, fileResolver=org.gradle.api.internal.file.BaseDirFileResolver@4508050f, compileGroovy=task ':Client:compileGroovy', test=task ':Client:test', buildFile=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\build.gradle, javadoc=task ':Client:javadoc', rootDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava, extensions=org.gradle.api.internal.plugins.DefaultConvention@1e2726a3, compileJava=task ':Client:compileJava', processTestResources=task ':Client:processTestResources', implicitTasks=[task ':Client:dependencies', task ':Client:dependencyInsight', task ':Client:help', task ':Client:projects', task ':Client:properties', task ':Client:tasks'], compileTestJava=task ':Client:compileTestJava', projectRegistry=org.gradle.api.internal.project.DefaultProjectRegistry@10289e0a, defaultTasks=[], buildDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes, services=ProjectScopeServices, parent=root project 'SimpleJDevJava', convention=org.gradle.api.internal.plugins.DefaultConvention@1e2726a3, projectEvaluationBroadcaster=ProjectEvaluationListener broadcast, metaInf=[], standardOutputCapture=org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7, project=project ':Client', testResultsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\test-results, sourceCompatibility=1.5, libsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\libs, dependencyCacheDirName=dependency-cache, reporting=org.gradle.api.reporting.ReportingExtension_Decorated@41f854e5, buildScriptSource=org.gradle.groovy.scripts.UriScriptSource@1b906ce8, components=[org.gradle.api.internal.java.JavaLibrary@3c17a401], sourceSets=[source set 'main', source set 'test'], projectEvaluator=org.gradle.configuration.project.LifecycleProjectEvaluator@56a7505, buildDependents=task ':Client:buildDependents', repositories=[org.gradle.api.internal.artifacts.repositories.DefaultMavenArtifactRepository_Decorated@168da839], testReportDirName=tests, apiDocTitle=Client 1.0 API, plugins=[org.gradle.api.plugins.HelpTasksPlugin@1267237c, org.gradle.api.plugins.BasePlugin@74742635, org.gradle.api.plugins.ReportingBasePlugin@75789d4d, org.gradle.language.base.plugins.LanguageBasePlugin@480136e5, org.gradle.language.jvm.plugins.JvmLanguagePlugin@2e04a041, org.gradle.api.plugins.JavaLanguagePlugin@2ed4040b, org.gradle.api.plugins.JavaBasePlugin@cb06677, org.gradle.api.plugins.JavaPlugin@77b10188, org.gradle.api.plugins.GroovyBasePlugin@56ee36, org.gradle.api.plugins.GroovyPlugin@635bfd56], manifest=org.gradle.api.java.archives.internal.DefaultManifest@62565d57, reportsDirName=reports, build=task ':Client:build', artifacts=org.gradle.api.internal.artifacts.dsl.DefaultArtifactHandler@195508fd, version=1.0, testClasses=task ':Client:testClasses', clean=task ':Client:clean', dependencies=org.gradle.api.internal.artifacts.dsl.dependencies.DefaultDependencyHandler@3d112885, logger=org.gradle.api.logging.Logging$LoggerImpl@59147031, processResources=task ':Client:processResources', groovyRuntime=org.gradle.api.tasks.GroovyRuntime_Decorated@11843f31, classes=task ':Client:classes', buildNeeded=task ':Client:buildNeeded', module=org.gradle.api.internal.artifacts.ProjectBackedModule@281cf63e, docsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\docs, rootProject=root project 'SimpleJDevJava', inheritedScope=org.gradle.api.internal.ExtensibleDynamicObject$InheritedDynamicObject@150b2f3, scriptPluginFactory=org.gradle.configuration.DefaultScriptPluginFactory@2e1f41c0, assemble=task ':Client:assemble', mayImplementMissingMethods=false, antBuilderFactory=org.gradle.api.internal.project.DefaultAntBuilderFactory@31d12310, mayImplementMissingProperties=false, resources=org.gradle.api.internal.resources.DefaultResourceHandler@615bbe8, dependencyCacheDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\dependency-cache, show=task ':Client:show', sources=[[source set 'main:java', source set 'main:resources'], [source set 'test:java', source set 'test:resources']], ext=org.gradle.api.internal.plugins.DefaultExtraPropertiesExtension@174b1f9b, defaultArtifacts=org.gradle.api.internal.plugins.DefaultArtifactPublicationSet_Decorated@1c59a6cc, projectDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client, jar=task ':Client:jar', description=null, ant=org.gradle.api.internal.project.DefaultAntBuilder@1886ad24, groovydoc=task ':Client:groovydoc', status=integration, allprojects=[project ':Client'], libsDirName=libs, archivesBaseName=Client, distsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\distributions, childProjects={}, class=class org.gradle.api.internal.project.DefaultProject_Decorated, jprFile=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\Client.jpr, logging=org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7, buildscript=org.gradle.api.internal.initialization.DefaultScriptHandler@34d475c1, docsDirName=docs, properties=(this Map), depth=1, subprojects=[], buildTasks=[build], targetCompatibility=1.5, gradle=build 'SimpleJDevJava', dependsOnProjects=[], state=project state 'EXECUTING', reportsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports, metaClass=org.codehaus.groovy.runtime.HandleMetaClass@140a2d31[groovy.lang.MetaClassImpl@140a2d31[class org.gradle.api.internal.project.DefaultProject_Decorated]], name=Client, path=:Client, parentIdentifier=root project 'SimpleJDevJava', testReportDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports\tests, check=task ':Client:check', binaries=[classes 'main', classes 'test'], configurationActions=org.gradle.configuration.project.DefaultProjectConfigurationActionContainer@34105c79, tasks=[task ':Client:assemble', task ':Client:build', task ':Client:buildDependents', task ':Client:buildNeeded', task ':Client:check', task ':Client:classes', task ':Client:clean', task ':Client:compileGroovy', task ':Client:compileJava', task ':Client:compileTestGroovy', task ':Client:compileTestJava', task ':Client:groovydoc', task ':Client:jar', task ':Client:javadoc', task ':Client:processResources', task ':Client:processTestResources', task ':Client:show', task ':Client:test', task ':Client:testClasses'], rebuildTasks=[clean, build], asDynamicObject=org.gradle.api.internal.ExtensibleDynamicObject@1dc12709, testResultsDirName=test-results, runtimeClasspath=file collection, compileTestGroovy=task ':Client:compileTestGroovy', configurations=[configuration ':Client:archives', configuration ':Client:compile', configuration ':Client:default', configuration ':Client:groovy', configuration ':Client:runtime', configuration ':Client:testCompile', configuration ':Client:testRuntime'], group=SimpleJDevJava, displayName=root project 'SimpleJDevJava'}, rebuildTasks=[clean, build], reporting=org.gradle.api.reporting.ReportingExtension_Decorated@41f854e5, reportsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports, reportsDirName=reports, repositories=[org.gradle.api.internal.artifacts.repositories.DefaultMavenArtifactRepository_Decorated@168da839], resources=org.gradle.api.internal.resources.DefaultResourceHandler@615bbe8, rootDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava, rootProject=root project 'SimpleJDevJava', runtimeClasspath=file collection, scriptPluginFactory=org.gradle.configuration.DefaultScriptPluginFactory@2e1f41c0, services=ProjectScopeServices, show=task ':Client:show', sourceCompatibility=1.5, sourceSets=[source set 'main', source set 'test'], sources=[[source set 'main:java', source set 'main:resources'], [source set 'test:java', source set 'test:resources']], standardOutputCapture=org.gradle.logging.internal.DefaultLoggingManager@4cd1cea7, state=project state 'EXECUTING', status=integration, subprojects=[], targetCompatibility=1.5, tasks=[task ':Client:assemble', task ':Client:build', task ':Client:buildDependents', task ':Client:buildNeeded', task ':Client:check', task ':Client:classes', task ':Client:clean', task ':Client:compileGroovy', task ':Client:compileJava', task ':Client:compileTestGroovy', task ':Client:compileTestJava', task ':Client:groovydoc', task ':Client:jar', task ':Client:javadoc', task ':Client:processResources', task ':Client:processTestResources', task ':Client:show', task ':Client:test', task ':Client:testClasses'], test=task ':Client:test', testClasses=task ':Client:testClasses', testReportDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\reports\tests, testReportDirName=tests, testResultsDir=D:\o\jdevadf\gradle-projects\SimpleJDevJava\Client\classes\test-results, testResultsDirName=test-results, version=1.0}
+source set 'main' -> org.gradle.api.internal.tasks.DefaultSourceSet_Decorated
+:Client:show UP-TO-DATE
+
+BUILD SUCCESSFUL
+
+Total time: 8.279 secs

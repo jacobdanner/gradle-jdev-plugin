@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/..">
+      <sourceFolder url="file://$MODULE_DIR$/../buildSrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../Client/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../JavaAppMultiSrc/foo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../JavaAppMultiSrc/diffSrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../Extension/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/../Client/userHome" />
+      <excludeFolder url="file://$MODULE_DIR$/../Extension/userHome" />
+      <excludeFolder url="file://$MODULE_DIR$/../JavaAppMultiSrc/foo/baz/com/jacobd/test/app/excluded" />
+      <excludeFolder url="file://$MODULE_DIR$/../JavaAppMultiSrc/userHome" />
+      <excludeFolder url="file://$MODULE_DIR$" />
+      <excludeFolder url="file://$MODULE_DIR$/../build" />
+      <excludeFolder url="file://$MODULE_DIR$/../buildSrc/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../buildSrc/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../maven" />
+      <excludeFolder url="file://$MODULE_DIR$/../userHome" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="gradle-1.11" level="application" />
+  </component>
+</module>
+
