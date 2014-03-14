@@ -24,7 +24,7 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="Client/Client.jpr"/></hash>
-      <!--<hash><url n="URL" path="Extension/Extension.jpr"/></hash>-->
+      <hash><url n="URL" path="Extension/Extension.jpr"/></hash>
       <hash><url n="URL" path="JavaAppMultiSrc/JavaAppMultiSrc.jpr"/></hash>
       <!--<hash><url n="URL" path="WebProject/WebProject.jpr"/></hash>-->
    </list>
