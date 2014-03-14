@@ -1,3 +1,5 @@
+/*
+import groovy.util.XmlSlurper
 
 Set<String> getProjectsFromWorkspace(File jwsFile)
 {
@@ -16,9 +18,10 @@ Set<String> getProjectsFromWorkspace(File jwsFile)
 }
 
 Set<String> projects = getProjectsFromWorkspace(file("SimpleJDevJava.jws"))
-
+*/
 //include projects.collect{"'$it'"}.join(",")
-projects.each { pro ->
+/*projects.each { pro ->
   "about to include $pro"
   include pro
-}
+}*/
+include 'client', 'JavaAppMultiSrc'

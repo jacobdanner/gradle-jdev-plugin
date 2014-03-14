@@ -24,7 +24,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="gradle-1.11" level="application" />
+    <orderEntry type="library" exported="" name="gradle-1.11" level="application" />
   </component>
 </module>
 
