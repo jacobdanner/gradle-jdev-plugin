@@ -11,3 +11,4 @@ userHome/
 buildSrc/build/
 buildSrc/.gradle/
 build/
+*/classes/
