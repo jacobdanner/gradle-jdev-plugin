@@ -24,4 +24,4 @@ Set<String> projects = getProjectsFromWorkspace(file("SimpleJDevJava.jws"))
   "about to include $pro"
   include pro
 }*/
-include 'client', 'JavaAppMultiSrc'
+include 'Client', 'JavaAppMultiSrc'

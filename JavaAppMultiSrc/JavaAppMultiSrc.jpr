@@ -21,6 +21,17 @@
       <string v="oracle.abbot/abbotPaths"/>
    </list>
    <value n="defaultPackage" v="com.jacobd.test.app.javaws"/>
+   <hash n="oracle.ide.model.DependencyConfiguration">
+      <list n="dependencyList">
+         <hash>
+            <hash n="dependable">
+               <url n="sourceOwnerURL" path="../SimpleJDevJava.jws"/>
+               <url n="sourceURL" path="../Client/Client.jpr"/>
+            </hash>
+            <value n="recognizerId" v="oracle.jdeveloper.library"/>
+         </hash>
+      </list>
+   </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="Ant"/>
