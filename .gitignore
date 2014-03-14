@@ -13,6 +13,8 @@ buildSrc/.gradle/
 build/
 classes/
 */classes/
+# Commenting out files build with intellij during debugging
+out/
 
 # .gitignore for Grails 1.2 and 1.3
 

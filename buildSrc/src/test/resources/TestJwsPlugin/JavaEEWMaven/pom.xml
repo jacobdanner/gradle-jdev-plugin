@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>JavaEEWMaven</groupId>
+  <artifactId>JavaEEWMaven</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/</directory>
+        <includes>
+          <include>*</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+  <modules>
+    <module>Model</module>
+    <module>ViewController</module>
+  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>JavaEEWMaven</groupId>
+      <artifactId>Model</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>JavaEEWMaven</groupId>
+      <artifactId>ViewController</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <type>war</type>
+    </dependency>
+  </dependencies>
+</project>

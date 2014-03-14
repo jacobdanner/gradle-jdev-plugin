@@ -1,7 +1,5 @@
-package com.jacobd.jdev.gradle2.helper
+package com.jacobd.jdev.gradle.helper
 
-import groovy.util.slurpersupport.GPathResult
-import groovy.xml.XmlUtil
 import org.gradle.api.Project
 import org.gradle.api.tasks.SourceSet
 
@@ -27,17 +25,15 @@ class JprFileHelper
   static final String JPR_TAGLIBS = "oracle.jdevimpl.webapp.jsp.libraries.model.ProjectTagLibraries"
 
 
-
-  def WEB_TECHNOLOGIES = ["JSF", "JSP", "JAVASCRIPT", "HTML", "TRINIDAD", "WebSocket","ADF_FACES"]
-  static final String JPR_DEFAULT_OUTPUT_DIR="classes"
+  def WEB_TECHNOLOGIES = ["JSF", "JSP", "JAVASCRIPT", "HTML", "TRINIDAD", "WebSocket", "ADF_FACES"]
+  static final String JPR_DEFAULT_OUTPUT_DIR = "classes"
   static final String JPR_DEFAULT_SRC_DIR = "src"
-  static final String JPR_DEFAULT_HTML_DIR="public_html"
-  def JPR_DEPENDENCY_CONFIGURATION ="oracle.ide.model.DependencyConfiguration"
-  def JPR_DEPENDENCY_CONFIGURATION_SOURCEURL ="sourceURL"
+  static final String JPR_DEFAULT_HTML_DIR = "public_html"
+  def JPR_DEPENDENCY_CONFIGURATION = "oracle.ide.model.DependencyConfiguration"
+  def JPR_DEPENDENCY_CONFIGURATION_SOURCEURL = "sourceURL"
 
   //webappDirName
   //static final String JPR_DEFAULT_
-
 
   /**
    * Returns the name of the project. For example, a project called
@@ -61,7 +57,7 @@ class JprFileHelper
     assert jprFile.exists()
     //LOG.info("About to parse ${jprFile.getPath()} ${jprFile.exists()} ${jprFile.getAbsolutePath()}" )
     def ext = new XmlSlurper(false, false).parse(jprFile)
-    def response = ext.hash.find{ it.@n == hashValue }
+    def response = ext.hash.find { it.@n == hashValue }
     response
   }
 
@@ -81,7 +77,7 @@ class JprFileHelper
    */
   String getProjectOutputDir(File jprFile)
   {
-    getHashFromJpr(jprFile, JPR_OUTPUT_DIR).url.find{it.@n == "outputDirectory"}.@path.text()
+    getHashFromJpr(jprFile, JPR_OUTPUT_DIR).url.find { it.@n == "outputDirectory" }.@path.text()
   }
 
   /**
@@ -116,12 +112,12 @@ class JprFileHelper
    * @return [[key:val],...]
    *
    */
-  def  getExtensionDtProperties(File jpr)
+  def getExtensionDtProperties(File jpr)
   {
     getMapofHash(jpr, JPR_EXT_DT_PROPERTIES)
   }
 
-  def  getModuleConfiguration(File jpr)
+  def getModuleConfiguration(File jpr)
   {
     getMapofHash(jpr, JPR_MODULE_CONFIGURATION)
   }
@@ -129,7 +125,9 @@ class JprFileHelper
 
   Set<String> getProjectLibraryIds(File jpr)
   {
-    getHashFromJpr(jpr, JPR_PROJECT_LIBRARIES).children().find { it.@n == "libraryReferences" }.hash.value.findAll{ it.@n == "id" }.collect { it.@v.text() }
+    getHashFromJpr(jpr, JPR_PROJECT_LIBRARIES).children().find { it.@n == "libraryReferences" }.hash.value.findAll {
+      it.@n == "id"
+    }.collect { it.@v.text() }
   }
 
   Set<String> getFaceletsLibraryIds(File jpr)
@@ -163,7 +161,7 @@ class JprFileHelper
   boolean hasWebProjectTendencies(File jpr)
   {
     List<String> techScopes = jfh.getTechnologyScopes(jpr)
-    techScopes.any{ WEB_TECHNOLOGIES.contains(it) }
+    techScopes.any { WEB_TECHNOLOGIES.contains(it) }
   }
 
   def addProjectJprDependenciesToProject(File jpr, Project project)
@@ -171,7 +169,7 @@ class JprFileHelper
     Set<File> jprDeps = getProjectJprDependenciesAsFile(jpr, project)
     Set<Project> jprProjects = new HashSet<Project>(jprDeps.size())
 
-    jprDeps.each {File dep ->
+    jprDeps.each { File dep ->
 
       def rootProj = project.getRootProject()
       def name = trimExt(dep)
@@ -191,46 +189,41 @@ class JprFileHelper
       {
         println "could not determine project, trying based on file contents"
         // create project
-      } else {
+      } else
+      {
         println "Dep project found ${depProj.name}"
         jprProjects.add(depProj)
       }
 
 
-      jprProjects.each {it ->
-      project.getDependsOnProjects().add(it)
+      jprProjects.each { it ->
+        project.getDependsOnProjects().add(it)
       }
       return jprProjects
-         /*
+      /*
 
-      if (project.project(trimExt(dep)))
-      def projectFiles = dep.getParentFile().listFiles(new FilenameFilter() {
-        @Override
-        boolean accept(File file, String s)
-        {
-          return s.endsWith(".gradle") || s.endsWith(".jpr")
-        }
-      })
-
-
-      def gradleFiles = projectFiles.findAll{it.getName().endsWith(".gradle")}
-      def jprFiles = projectFiles.findAll{it.getName().endsWith(".jpr")}
-
-      if (!gradleFiles.isEmpty())
-      {
-        project.getDependsOnProjects().add(project.project(dep.getParentFile()))
-      } else if (jprFiles.isEmpty())
-      {
-
-      } else {
-        println "Could Not determine project dependencies to add"
-      }*/
+   if (project.project(trimExt(dep)))
+   def projectFiles = dep.getParentFile().listFiles(new FilenameFilter() {
+     @Override
+     boolean accept(File file, String s)
+     {
+       return s.endsWith(".gradle") || s.endsWith(".jpr")
+     }
+   })
 
 
+   def gradleFiles = projectFiles.findAll{it.getName().endsWith(".gradle")}
+   def jprFiles = projectFiles.findAll{it.getName().endsWith(".jpr")}
 
+   if (!gradleFiles.isEmpty())
+   {
+     project.getDependsOnProjects().add(project.project(dep.getParentFile()))
+   } else if (jprFiles.isEmpty())
+   {
 
-
-
+   } else {
+     println "Could Not determine project dependencies to add"
+   }*/
 
 
     }
@@ -256,11 +249,11 @@ class JprFileHelper
   }
 
 
-
-
   Set<String> getProjectJprDependencies(File jpr)
   {
-    getHashFromJpr(jpr, JPR_DEPENDENCY_CONFIGURATION).depthFirst().findAll { it.@n == JPR_DEPENDENCY_CONFIGURATION_SOURCEURL }.collect { it.@path.text() }
+    getHashFromJpr(jpr, JPR_DEPENDENCY_CONFIGURATION).depthFirst().findAll {
+      it.@n == JPR_DEPENDENCY_CONFIGURATION_SOURCEURL
+    }.collect { it.@path.text() }
   }
 
   Set<File> getProjectJprDependenciesAsFile(File jpr, Project project)
@@ -271,18 +264,20 @@ class JprFileHelper
 
   Set<String> getProjectSourcePathAsString(File jpr)
   {
-    def pathHash = getHashFromJpr(jpr, JPR_SRC_PATH)//jpr.hash.findAll{it.@n=="oracle.jdeveloper.model.PathsConfiguration"}
-    if(pathHash.isEmpty())
+    def pathHash = getHashFromJpr(jpr, JPR_SRC_PATH)
+//jpr.hash.findAll{it.@n=="oracle.jdeveloper.model.PathsConfiguration"}
+    if (pathHash.isEmpty())
     {
       return [JPR_DEFAULT_SRC_DIR]
-    } else {
-      pathHash.hash.list.hash.list.findAll { it.@n == "url-path" }.collect{it.url.@path.text()}
+    } else
+    {
+      pathHash.hash.list.hash.list.findAll { it.@n == "url-path" }.collect { it.url.@path.text() }
     }
   }
 
   Set<File> getProjectSourcePath(File jpr, Project project)
   {
-    getProjectSourcePathAsString(jpr).collect{new File(project.getRootDir(), it)}
+    getProjectSourcePathAsString(jpr).collect { new File(project.getRootDir(), it) }
     //def pathHash = getHashFromJpr(jpr, JPR_SRC_PATH)//jpr.hash.findAll{it.@n=="oracle.jdeveloper.model.PathsConfiguration"}
     //return pathHash?.isEmpty() ? new File(project.getRootDir(), "src") :
     //  pathHash.hash.list.hash.list.findAll { it.@n == "url-path" }.collect { new File(project.getRootDir(), it.url.@path.text()) }
@@ -295,14 +290,23 @@ class JprFileHelper
   }
 
 
-
-
-  def getDeploymentProfileNames(File jprFile)
+  String getDeploymentProfileNames(File jprFile)
   {
-    def deployProfiles = getHashFromJpr(jprFile, JPR_DEP_PROFILES).list.find { it.@n == "profileList" }.string.collect { it.@v.text() }
-    LOG.info("DEPLOY PROFILES: $deployProfiles")
-    return deployProfiles
+    def deployProfiles = getHashFromJpr(jprFile, JPR_DEP_PROFILES).list.find { it.@n == "profileList" }.string.collect {
+      it.@v.text()
     }
+    LOG.info("DEPLOY PROFILES: $deployProfiles")
+    if (deployProfiles.size() > 1)
+    {
+      return "*"
+    } else if(deployProfiles.isEmpty())
+    {
+      return ""
+    } else
+    {
+      deployProfiles.first()
+    }
+  }
 
   String getDefaultPackage(File jprFile)
   {
