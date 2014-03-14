@@ -31,7 +31,9 @@ println "srcDirs == "
 srcDirsJpr.each{println it}
 */
 buildDir = 'classes'//new File(projectDir, helper.getProjectOutputDir(project.jprFile))
-
+compileJava{
+  destinationDir = buildDir// file("classes")
+}
 javadoc {
   source sourceSets.main.allJava
   title = 'Gradle Sample Project'

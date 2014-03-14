@@ -1,0 +1,41 @@
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+  mavenCentral()
+}
+group = "com.jacobd.test.app.javaws"
+dependencies {
+  testCompile group: 'junit', name: 'junit', version: '4.11'
+  compile localGroovy()
+  compile gradleApi()
+
+}
+buildDir = 'classes'
+compileJava {
+  destinationDir = buildDir// file("classes")
+}
+
+sourceSets.main.java.srcDirs = ["diffSrc", "foo/baz"]
+sourceSets{
+  main{
+    java{
+      exclude "com/jacobd/test/app/excluded/"
+      exclude "com/jacobd/test/app/javaws/DoesNotCompileExcluded.java"
+      include "**"
+    }
+  }
+}
+
+
+jar.doLast {
+  println "find ${project.buildDir}".execute().text
+}
+
+
+
+
