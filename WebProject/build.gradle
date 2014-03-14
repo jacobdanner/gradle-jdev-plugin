@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'groovy'
+// apply plugin: 'war'
 
 sourceCompatibility = 1.5
 version = '1.0'
@@ -21,26 +22,28 @@ compileJava {
 
 
 sourceSets.main.java.srcDirs = ["src"]
+// TODO: set resourceDir to public_html
 
 
 jar.doLast {
   println "find ${project.buildDir}".execute().text
 }
 
-task runOjDeploy(dependsOn:build) << {
+task runOjDeploy(dependsOn: build) << {
 
   assert System.getenv("ORACLE_HOME") != null, "ORACLE_HOME env var needed to use ojdeploy"
   def oracleHome = new File(System.getenv("ORACLE_HOME"))
   assert oracleHome.exists(), "Deployment requires environment variable ORACLE_HOME pointing to an oracle installation that includes jdeveloper"
   String ojDeployPath = "jdeveloper/jdev/bin/ojdeploy"
-  if(isWindows()){
+  if (isWindows())
+  {
     ojDeployPath += ".exe"
   }
   File ojDeploy = new File(oracleHome, ojDeployPath)
   // TODO: can we deduce workspace without adding a rootproject extension property
   // TODO: what should we do about the specific profile
-  def ojDeployExec = ["${ojDeploy.getPath()}","-workspace",project.rootDir.getPath()+File.separator+"SimpleJDevJava.jws",
-  "-project",project.name,"-profile","*"]
+  def ojDeployExec = ["${ojDeploy.getPath()}", "-workspace", project.rootDir.getPath() + File.separator + "SimpleJDevJava.jws",
+      "-project", project.name, "-profile", "*"]
   // This last parameter could also be hardcoded as edtExtensionProfile
 
   // TODO: would it be simpler to run via AntBuilder
@@ -69,7 +72,8 @@ task runOjDeploy(dependsOn:build) << {
   assert proc.exitValue() != 0, "Process returned a non-zero exit code, assuming FAILED result\n${proc.err.text}"
 }
 
-def isWindows(){
+def isWindows()
+{
   if (System.properties['os.name'].toLowerCase().contains('windows'))
   {
     return true
