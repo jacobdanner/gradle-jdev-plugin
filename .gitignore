@@ -11,7 +11,9 @@ userHome/
 buildSrc/build/
 buildSrc/.gradle/
 build/
+classes/
 */classes/
+
 # .gitignore for Grails 1.2 and 1.3
 
 # web application files
