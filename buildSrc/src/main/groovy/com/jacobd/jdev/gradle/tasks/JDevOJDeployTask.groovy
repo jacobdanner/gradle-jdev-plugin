@@ -1,34 +1,24 @@
 package com.jacobd.jdev.gradle.tasks
 
 import org.gradle.api.DefaultTask
+import org.gradle.api.GradleException
 import org.gradle.api.tasks.TaskAction
 import com.jacobd.jdev.gradle.helper.JprFileHelper
+import org.gradle.internal.os.OperatingSystem
 
 class JDevOJDeployTask extends DefaultTask
 {
   JprFileHelper helper = new JprFileHelper()
   // TODO: major refactor here to structure this properly
 
+  File oracleHomePath = System.getenv("ORACLE_HOME")
+  File workspace
   File jprFile
 
-  private String getDeploymentProfileNames(File jprFile)
+  String profileName = "*"
+
+  File getOjDeployPath()
   {
-    def deployProfiles = helper.getHashFromJpr(jprFile, JPR_DEP_PROFILES).list.find { it.@n == "profileList" }.string.collect {
-      it.@v.text()
-    }
-    LOG.info("DEPLOY PROFILES: $deployProfiles")
-    if (deployProfiles.size() > 1)
-    {
-      return "*"
-    } else
-    {
-      deployProfiles.first()
-    }
-  }
-  @TaskAction
-  def runOjdeploy()
-  {
-    assert System.getenv("ORACLE_HOME") != null, "ORACLE_HOME env var needed to use ojdeploy"
     def oracleHome = new File(System.getenv("ORACLE_HOME"))
     assert oracleHome.exists(), "Deployment requires environment variable ORACLE_HOME pointing to an oracle installation that includes jdeveloper"
     String ojDeployPath = "jdeveloper/jdev/bin/ojdeploy"
@@ -37,11 +27,24 @@ class JDevOJDeployTask extends DefaultTask
       ojDeployPath += ".exe"
     }
     File ojDeploy = new File(oracleHome, ojDeployPath)
+    return ojDeploy
+  }
+
+  @TaskAction
+  def runOjdeploy()
+  {
+    if(System.getenv("ORACLE_HOME") != null){throw new GradleException("ORACLE_HOME env var needed to use ojdeploy")}
     // TODO: can we deduce workspace without adding a rootproject extension property
     // TODO: what should we do about the specific profile
+
     def ojDeployExec = ["${ojDeploy.getPath()}", "-workspace", project.rootDir.getPath() + File.separator + "SimpleJDevJava.jws",
-        "-project", project.name, "-profile", "*"]
-    // This last parameter could also be hardcoded as edtExtensionProfile
+        "-project", project.name]
+    def profileValue = helper.getDeploymentProfile(jprFile)
+    if (profileValue.length() > 0)
+    {
+      ojDeployExec.add("-profile")
+      ojDeployExec.add(profileValue)
+    }
 
     // TODO: would it be simpler to run via AntBuilder
     /*
@@ -71,6 +74,8 @@ class JDevOJDeployTask extends DefaultTask
 
   def isWindows()
   {
+    /*isWindows = org.gradle.internal.os.OperatingSystem.current().windows
+
     if (System.properties['os.name'].toLowerCase().contains('windows'))
     {
       return true
@@ -78,5 +83,7 @@ class JDevOJDeployTask extends DefaultTask
     {
       return false
     }
+    */
+    return OperatingSystem.current().windows
   }
 }

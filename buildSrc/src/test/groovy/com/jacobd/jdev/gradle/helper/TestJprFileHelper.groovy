@@ -1,11 +1,7 @@
 package com.jacobd.jdev.gradle.helper
-
-import groovy.io.FileType
-import groovy.xml.XmlUtil
 //import org.dubh.jdant.ProjectFile
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
-import org.junit.Rule
 import org.junit.Test
 
 
@@ -21,8 +17,8 @@ class TestJprFileHelper extends GroovyTestCase
 
   final static String extJprProj = "src/test/resources/TestJwsPlugin/SimpleJDevJava/Extension/Extension.jpr"
   final static String clientJprProj = "src/test/resources/TestJwsPlugin/SimpleJDevJava/Client/Client.jpr"
-  final static String multiSrcJprProj ="src/test/resources/TestJwsPlugin/SimpleJDevJava/JavaAppMultiSrc/JavaAppMultiSrc.jpr"
-
+  final
+  static String multiSrcJprProj = "src/test/resources/TestJwsPlugin/SimpleJDevJava/JavaAppMultiSrc/JavaAppMultiSrc.jpr"
 
 
   public void testGetDefaultPackage()
@@ -46,7 +42,7 @@ class TestJprFileHelper extends GroovyTestCase
     assert defaultSrc.size() == 1
     assert defaultSrc.contains("src")
     def defSrcFile = jfh.getProjectSourcePath(jprFile, project)
-    assert defSrcFile.any{it.getName().endsWith("src")}
+    assert defSrcFile.any { it.getName().endsWith("src") }
   }
 
   @Test
@@ -66,11 +62,11 @@ class TestJprFileHelper extends GroovyTestCase
   {
     def (jprFile, project) = setup_test_impl(multiSrcJprProj)
 
-    def techScopes =  jfh.getTechnologyScopes(jprFile)
+    def techScopes = jfh.getTechnologyScopes(jprFile)
     println "TECHSCOPES == $techScopes"
-    def expected = ["Ant","Java","JavaBeans","Swing/AWT"]
+    def expected = ["Ant", "Java", "JavaBeans", "Swing/AWT"]
 
-    techScopes.each{ it->
+    techScopes.each { it ->
       //println "CLASSNAME: ${it.getClass().getName()}"
       expected.contains(it)
     }
@@ -97,7 +93,7 @@ class TestJprFileHelper extends GroovyTestCase
   public void testDeploymentProfiles()
   {
     def (jprFile, project) = setup_test_impl(extJprProj)
-    def profiles = jfh.getDeploymentProfileNames(jprFile)
+    def profiles = jfh.getDeploymentProfile(jprFile)
     println "PROFILES: $profiles"
     assert !profiles.isEmpty()
     assert profiles.contains("edtExtensionProfile"), "profiles: ${profiles}"
@@ -105,7 +101,7 @@ class TestJprFileHelper extends GroovyTestCase
 
 
     (jprFile, project) = setup_test_impl(clientJprProj)
-    def emptyProfiles = jfh.getDeploymentProfileNames(jprFile)
+    def emptyProfiles = jfh.getDeploymentProfile(jprFile)
     assert emptyProfiles.size() == 0, "profiles was not empty ${emptyProfiles}"
 
     // TODO: add test for more than one deployment profile
@@ -113,6 +109,65 @@ class TestJprFileHelper extends GroovyTestCase
 
   }
 
+  @Test
+  public void testExtensionJprForSpecifics()
+  {
+    def (File jprFile, Project project) = setup_test_impl(extJprProj)
+    def techScopes = jfh.getTechnologyScopes(jprFile)
+    assert techScopes.containsAll(["Ant", "EJB", "ExtensionDT", "JSF",
+        "JSP", "Java", "Maven", "WSDL",
+        "WSPolicy", "WebServices", "XML"])
+    def projectIds = jfh.getProjectLibraryIds(jprFile)
+    def expectedProjectLibraryIds = ["EJB", "Apache Maven 3.0.4", "Java EE",
+        "Apache Ant", "JAX-WS Client", "JDeveloper Runtime", "JSF 2.1",
+        "JUnit 4 Runtime", "JSP Runtime", "JSTL 1.2"]
+    assert projectIds.containsAll(expectedProjectLibraryIds)
+    def outputDir = jfh.getProjectOutputDir(jprFile)
+    assert "classes/outputDir" == outputDir
+    File expectedOutputDirFile = new File(project.getProjectDir(), outputDir)
+    File actualOutputDirFile = jfh.getProjectOutputDirFile(jprFile, project)
+    assert expectedOutputDirFile == actualOutputDirFile
+
+    Set<String> workspaces = jfh.getSourceOwnerURLFromDependencies(jprFile)
+    Set<String> expectedWorkspace = ["../SimpleJDevJava.jws"]
+    assert workspaces.containsAll(expectedWorkspace)
+
+    Set<String> faceletIds = jfh.getFaceletsLibraryIds(jprFile)
+    Map<String, String> expectedFaceLetIds = ["JSF Core": "2.1", "JSF HTML": "2.1",
+        "Facelets Composite": "2.1", "Facelets": "2.1", "Mojarra Ext Utils": "2.1",
+        "JSTL": "2.1", "JSTL Functions": "2.1"]
+
+    assert expectedFaceLetIds.keySet().containsAll(faceletIds)
+    Set<String> projectTagLibraryIds = jfh.getProjectTagLibraries(jprFile)
+    Map<String, String> expectedTagLibraryIds = ["JSF Core": "2.1", "JSF HTML": "2.1"]
+    assert expectedTagLibraryIds.keySet().containsAll(projectTagLibraryIds)
+    def projectTagLibraryDetails = jfh.getTagLibraryDetails(jprFile, jfh.JPR_TAGLIBS)
+    expectedTagLibraryIds.each{ libName, libVer ->
+      assert projectTagLibraryDetails.containsKey(libName)
+      Map<String, String> details = projectTagLibraryDetails.get(libName)
+      assert details.containsKey("version")
+      assert details.get("version") == libVer
+      assert details.containsKey("baseLibrary-version")
+      assert details.get("baseLibrary-version") == libVer
+    }
+
+  }
+
+  @Test
+  public void testDeduceWorkspaceValue()
+  {
+    def (File jprFile, Project project) = setup_test_impl(extJprProj)
+    Set<String> ws = jfh.deduceWorkspaceFromDependencies(jprFile)
+    assert ws.containsAll(["../SimpleJDevJava.jws"])
+  }
+
+  @Test
+  public void testProjectTagLibraryDetails()
+  {
+    def (File jprFile, Project project) = setup_test_impl(extJprProj)
+    def details = jfh.getTagLibraryDetails(jprFile, jfh.JPR_TAGLIBS)
+    assert details.keySet().containsAll(["JSF Core", "JSF HTML"])
+  }
 
   @Test
   public void testProjectLibraryIds()
@@ -168,22 +223,18 @@ class TestJprFileHelper extends GroovyTestCase
     def projects = jfh.getProjectJprDependenciesAsFile(jprFile, project)
     println "ID: $projects"
     assert !projects.isEmpty()
-    assert projects.any{it.getName().endsWith("Client.jpr")}
-    assert projects.every{it.exists()}
+    assert projects.any { it.getName().endsWith("Client.jpr") }
+    assert projects.every { it.exists() }
 
   }
 
-
-
- /* public void testProjectDependencyAddition()
-  {
-    def (jprFile, project) = setup_test_impl(extJprProj)
-    def projects = jfh.addProjectJprDependenciesToProject(jprFile, project)
-    assert !project.getDependsOnProjects().isEmpty()
-    assert project.getDependsOnProjects().containsAll(projects)
-  }*/
-
-
+  /* public void testProjectDependencyAddition()
+   {
+     def (jprFile, project) = setup_test_impl(extJprProj)
+     def projects = jfh.addProjectJprDependenciesToProject(jprFile, project)
+     assert !project.getDependsOnProjects().isEmpty()
+     assert project.getDependsOnProjects().containsAll(projects)
+   }*/
 
 
   def setup_test_impl(String jprPath)
@@ -202,7 +253,6 @@ class TestJprFileHelper extends GroovyTestCase
     assert project != null
     return [jprFile, project]
   }
-
 
 
 }

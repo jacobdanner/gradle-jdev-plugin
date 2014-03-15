@@ -1,6 +1,7 @@
 package com.jacobd.jdev.gradle.tasks
 
 import org.gradle.api.Project
+import org.gradle.api.Task
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Test
 
@@ -14,8 +15,25 @@ class JDevOJDeployTaskTest
   @Test
   public void canAddTaskToProject()
   {
-    Project project = ProjectBuilder.builder().build()
-    def task = project.task('ojdeploy', type: JDevOJDeployTask)
+    Task task = createDeployTask()
     assertTrue(task instanceof JDevOJDeployTask)
+  }
+
+  @Test(expected=AssertionError.class)
+  public void verifyRequiresOracleHome()
+  {
+    JDevOJDeployTask task = createDeployTask()
+    task.runOjdeploy()
+  }
+
+  @Test
+  public void testBasicOjDeployTask()
+  {
+    JDevOJDeployTask task = createDeployTask()
+  }
+
+  private JDevOJDeployTask createDeployTask(){
+    final Project project = Projectbuilder.builder().build()
+    project.task("ojdeploy", type: JDevOJDeployTask)
   }
 }

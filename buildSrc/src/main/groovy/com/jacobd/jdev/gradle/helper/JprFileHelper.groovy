@@ -1,5 +1,6 @@
 package com.jacobd.jdev.gradle.helper
 
+import groovy.util.slurpersupport.GPathResult
 import org.gradle.api.Project
 import org.gradle.api.tasks.SourceSet
 
@@ -41,7 +42,7 @@ class JprFileHelper
    *
    * @return the name of the project.
    */
-  def trimExt(File jprFile)
+  String trimExt(File jprFile)
   {
     String fileName = jprFile.getName();
     int dot = fileName.lastIndexOf('.');
@@ -52,7 +53,7 @@ class JprFileHelper
     return fileName.substring(0, dot);
   }
 
-  def getHashFromJpr(File jprFile, String hashValue)
+  GPathResult getHashFromJpr(File jprFile, String hashValue)
   {
     assert jprFile.exists()
     //LOG.info("About to parse ${jprFile.getPath()} ${jprFile.exists()} ${jprFile.getAbsolutePath()}" )
@@ -65,6 +66,13 @@ class JprFileHelper
   {
     // TODO: flatten this
     getHashFromJpr(jpr, key).children().collect { ["${it.@n}": it.@v] }
+  }
+
+  Set<String> deduceWorkspaceFromDependencies(File jprFile)
+  {
+    getHashFromJpr(jprFile, JPR_DEPENDENCY_CONFIGURATION).list.hash.findAll {
+      it.@n.text() == "sourceOwnerURL"
+    }.collect { it.@path.text() }
   }
 
   /**
@@ -93,10 +101,10 @@ class JprFileHelper
     def output = getProjectOutputDir(jpr)
     if (output)
     {
-      return new File(project.getRootDir(), output)
+      return new File(project.getProjectDir(), output)
     } else
     {
-      return new File(project.getRootDir(), JPR_DEFAULT_OUTPUT_DIR)
+      return new File(project.getProjectDir(), JPR_DEFAULT_OUTPUT_DIR)
     }
   }
 
@@ -137,7 +145,26 @@ class JprFileHelper
 
   Set<String> getProjectTagLibraries(File jpr)
   {
-    getTagLibraryIds(jpr, JPR_TAGLIBS)
+    Set<String> libIds = getTagLibraryIds(jpr, JPR_TAGLIBS)
+    return libIds
+  }
+
+
+  Map<String, Map<String, String>> getTagLibraryDetails(File jpr, String key)
+  {
+    Map<String, Map<String, String>> details = new HashMap<String, Map<String, String>>()
+    getHashFromJpr(jpr, key).list.hash.each { node ->
+      def name = node.value.find { it.@n.text() == "name" }.@v.text()
+      details.put(name, new HashMap<String, String>())
+      node.value.each { details.get(name).put(it.@n.text(), it.@v.text()) }
+      node.hash.each { lib ->
+        def prefix = lib.@n.text()
+        lib.value.each {
+          details.get(name).put(prefix + "-" + it.@n.text(), it.@v.text())
+        }
+      }
+    }
+    return details
   }
 
   Set<String> getTagLibraryIds(File jpr, String key)
@@ -145,12 +172,12 @@ class JprFileHelper
     getHashFromJpr(jpr, key).list.hash.value.findAll { it.@n == "name" }.collect { it.@v.text() }
   }
 
-  /**
-   * There is no clear criteria to determine if a project is a test project or not
-   * Check the project source paths and the name to see if it contains junit or test
-   * @param jpr
-   * @return true|false
-   */
+/**
+ * There is no clear criteria to determine if a project is a test project or not
+ * Check the project source paths and the name to see if it contains junit or test
+ * @param jpr
+ * @return true|false
+ */
   boolean isTestProject(File jpr)
   {
     String name = trimExt(jpr)
@@ -248,6 +275,12 @@ class JprFileHelper
 
   }
 
+  Set<String> getSourceOwnerURLFromDependencies(File jpr)
+  {
+    getHashFromJpr(jpr, JPR_DEPENDENCY_CONFIGURATION).list.hash.hash.url.findAll {
+      it.@n.text() == "sourceOwnerURL"
+    }.collect { it.@path.text() }
+  }
 
   Set<String> getProjectJprDependencies(File jpr)
   {
@@ -289,17 +322,24 @@ class JprFileHelper
     //throw
   }
 
-
-  String getDeploymentProfileNames(File jprFile)
+  Set<String> getDeploymentProfileNames(File jprFile)
   {
+
     def deployProfiles = getHashFromJpr(jprFile, JPR_DEP_PROFILES).list.find { it.@n == "profileList" }.string.collect {
       it.@v.text()
     }
     LOG.info("DEPLOY PROFILES: $deployProfiles")
+    return deployProfiles
+  }
+
+  String getDeploymentProfile(File jprFile)
+  {
+    def deployProfiles = getDeploymentProfileNames(jprFile)
+    LOG.info("DEPLOY PROFILES: $deployProfiles")
     if (deployProfiles.size() > 1)
     {
       return "*"
-    } else if(deployProfiles.isEmpty())
+    } else if (deployProfiles.isEmpty())
     {
       return ""
     } else
@@ -314,19 +354,19 @@ class JprFileHelper
     ext.value.findAll { it.@n == JPR_DEFAULT_PKG }.@v.text()
   }
 
-  /**
-   * Gets the following from the JPR
-   * <hash n="oracle.ide.model.TechnologyScopeConfiguration">
-   *   <list n="technologyScope">
-   *     <string v="Ant"/>
-   *     <string v="Java"/>
-   *     <string v="JavaBeans"/>
-   *     <string v="Swing/AWT"/>
-   *   </list>
-   * </hash>
-   * @param jpr
-   * @return
-   */
+/**
+ * Gets the following from the JPR
+ * <hash n="oracle.ide.model.TechnologyScopeConfiguration">
+ *   <list n="technologyScope">
+ *     <string v="Ant"/>
+ *     <string v="Java"/>
+ *     <string v="JavaBeans"/>
+ *     <string v="Swing/AWT"/>
+ *   </list>
+ * </hash>
+ * @param jpr
+ * @return
+ */
   List<String> getTechnologyScopes(File jprFile)
   {
     def scope = getHashFromJpr(jprFile, JPR_TECH_SCOPES).list.string.collect { it.@v.text() }
