@@ -1,7 +1,9 @@
 package com.jacobd.jdev.gradle.helper
 
 import groovy.util.slurpersupport.GPathResult
+import groovy.xml.XmlUtil
 import org.gradle.api.Project
+import org.gradle.api.file.FileTree
 import org.gradle.api.tasks.SourceSet
 
 import java.util.logging.Logger
@@ -32,7 +34,7 @@ class JprFileHelper
   static final String JPR_DEFAULT_HTML_DIR = "public_html"
   def JPR_DEPENDENCY_CONFIGURATION = "oracle.ide.model.DependencyConfiguration"
   def JPR_DEPENDENCY_CONFIGURATION_SOURCEURL = "sourceURL"
-
+  def JPR_DEPENDENCY_CONFIGURATION_SOURCEOWNERURL = "sourceOwnerURL"
   //webappDirName
   //static final String JPR_DEFAULT_
 
@@ -66,13 +68,6 @@ class JprFileHelper
   {
     // TODO: flatten this
     getHashFromJpr(jpr, key).children().collect { ["${it.@n}": it.@v] }
-  }
-
-  Set<String> deduceWorkspaceFromDependencies(File jprFile)
-  {
-    getHashFromJpr(jprFile, JPR_DEPENDENCY_CONFIGURATION).list.hash.findAll {
-      it.@n.text() == "sourceOwnerURL"
-    }.collect { it.@path.text() }
   }
 
   /**
@@ -277,8 +272,8 @@ class JprFileHelper
 
   Set<String> getSourceOwnerURLFromDependencies(File jpr)
   {
-    getHashFromJpr(jpr, JPR_DEPENDENCY_CONFIGURATION).list.hash.hash.url.findAll {
-      it.@n.text() == "sourceOwnerURL"
+    getHashFromJpr(jpr, JPR_DEPENDENCY_CONFIGURATION).depthFirst().findAll {
+      it.@n.text() == JPR_DEPENDENCY_CONFIGURATION_SOURCEOWNERURL
     }.collect { it.@path.text() }
   }
 
@@ -317,6 +312,54 @@ class JprFileHelper
     //println "SRCPATHS -> $srcPaths"
   }
 
+  Set<FileTree> getProjectSourcesAsFileTrees(File jpr, Project project)
+  {
+
+    //FileTree ft = project.fileTree(dir: dirPath, includes: includes, excludes: excludes)
+
+    /*
+    FileTree ft = project.fileTree(dirPath)
+    includes.each { inc -> ft.include(inc) }
+    excludes.each { exc -> ft.exclude(exc) }
+    *//*
+    project.fileTree {
+
+      from dirPath
+      include includes
+      exclude excludes
+    }*/
+    //ft
+
+
+    def pathHash = getHashFromJpr(jpr, JPR_SRC_PATH).hash.find { it.@n.text() == "javaContentSet" }.list.hash.collect {
+      it
+    }
+    println "PATHASH->$pathHash"
+    def ftAll = pathHash.collect { h ->
+      println "H -> ${h.children().size()}"
+      def dirPath = h.list.findAll { it.@n.text() == "url-path" }.url.collect { it.@path.text() }
+      println "DIRPATH -> ${dirPath}"
+      def paths = h.list.findAll { it.@n.text() == "pattern-filters" }.string.collect { it.@v.text() }
+      println "PATHS: " + paths
+      def includes = paths.findAll { it.startsWith("+") }.collect { String p -> p.substring(1) }
+      println "INCLUDES ->" + includes
+      def excludes = paths.findAll { it.startsWith("-") }.collect { String p -> p.substring(1) }
+      println "EXCLUDES ->" + excludes
+
+      FileTree ft = project.fileTree(dir: dirPath, include: includes, exclude: excludes)
+      /*
+      FileTree ft = project.fileTree(dirPath)
+      includes.each{ inc -> ft.include(inc)}
+      excludes.each { exc -> ft.exclude(exc)}
+      */
+      println "FT -> ${ft}"
+      ft
+
+    }
+    println "FTALL -> $ftAll"
+    return ftAll
+  }
+
   SourceSet getProjectSourcesAsSourceSet(File jpr, Project project)
   {
     //throw
@@ -328,14 +371,17 @@ class JprFileHelper
     def deployProfiles = getHashFromJpr(jprFile, JPR_DEP_PROFILES).list.find { it.@n == "profileList" }.string.collect {
       it.@v.text()
     }
-    LOG.info("DEPLOY PROFILES: $deployProfiles")
     return deployProfiles
   }
 
   String getDeploymentProfile(File jprFile)
   {
-    def deployProfiles = getDeploymentProfileNames(jprFile)
+    Set<String> deployProfiles = getDeploymentProfileNames(jprFile)
     LOG.info("DEPLOY PROFILES: $deployProfiles")
+    if( deployProfiles.size() == 1)
+    {
+      return deployProfiles.asList().first()
+    }
     if (deployProfiles.size() > 1)
     {
       return "*"
@@ -344,7 +390,7 @@ class JprFileHelper
       return ""
     } else
     {
-      deployProfiles.first()
+      deployProfiles.join(",")
     }
   }
 

@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue
  */
 class JDevOJDeployTaskTest
 {
+  /*
   @Test
   public void canAddTaskToProject()
   {
@@ -31,7 +32,7 @@ class JDevOJDeployTaskTest
   {
     JDevOJDeployTask task = createDeployTask()
   }
-
+  */
   private JDevOJDeployTask createDeployTask(){
     final Project project = Projectbuilder.builder().build()
     project.task("ojdeploy", type: JDevOJDeployTask)

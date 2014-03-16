@@ -1,6 +1,7 @@
 package com.jacobd.jdev.gradle.helper
 //import org.dubh.jdant.ProjectFile
 import org.gradle.api.Project
+import org.gradle.api.file.FileTree
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Test
 
@@ -17,8 +18,7 @@ class TestJprFileHelper extends GroovyTestCase
 
   final static String extJprProj = "src/test/resources/TestJwsPlugin/SimpleJDevJava/Extension/Extension.jpr"
   final static String clientJprProj = "src/test/resources/TestJwsPlugin/SimpleJDevJava/Client/Client.jpr"
-  final
-  static String multiSrcJprProj = "src/test/resources/TestJwsPlugin/SimpleJDevJava/JavaAppMultiSrc/JavaAppMultiSrc.jpr"
+  final static String multiSrcJprProj = "src/test/resources/TestJwsPlugin/SimpleJDevJava/JavaAppMultiSrc/JavaAppMultiSrc.jpr"
 
 
   public void testGetDefaultPackage()
@@ -142,7 +142,7 @@ class TestJprFileHelper extends GroovyTestCase
     Map<String, String> expectedTagLibraryIds = ["JSF Core": "2.1", "JSF HTML": "2.1"]
     assert expectedTagLibraryIds.keySet().containsAll(projectTagLibraryIds)
     def projectTagLibraryDetails = jfh.getTagLibraryDetails(jprFile, jfh.JPR_TAGLIBS)
-    expectedTagLibraryIds.each{ libName, libVer ->
+    expectedTagLibraryIds.each { libName, libVer ->
       assert projectTagLibraryDetails.containsKey(libName)
       Map<String, String> details = projectTagLibraryDetails.get(libName)
       assert details.containsKey("version")
@@ -153,11 +153,23 @@ class TestJprFileHelper extends GroovyTestCase
 
   }
 
+  /*
   @Test
-  public void testDeduceWorkspaceValue()
+  public void testGetProjectSourcesAsFileTrees()
+  {
+    def (File jprFile, Project project) = setup_test_impl(multiSrcJprProj)
+    def jprFile2 = new File("E:/groovy_stuffs/gradle-projects/SimpleJDevJava/buildSrc/src/test/resources/TestJwsPlugin/SimpleJDevJava/JavaAppMultiSrc/JavaAppMultiSrc.jpr")
+    Set<FileTree> ws = jfh.getProjectSourcesAsFileTrees(jprFile2, project)
+    assert !ws.empty
+    assert ws.every{ it.directory }
+  }
+ */
+
+  @Test
+  public void testGetSourceOwnerURLFromDependencies()
   {
     def (File jprFile, Project project) = setup_test_impl(extJprProj)
-    Set<String> ws = jfh.deduceWorkspaceFromDependencies(jprFile)
+    Set<String> ws = jfh.getSourceOwnerURLFromDependencies(jprFile)
     assert ws.containsAll(["../SimpleJDevJava.jws"])
   }
 

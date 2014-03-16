@@ -10,7 +10,8 @@ dependencies {
 
   compile gradleApi()
   compile localGroovy()
-  testCompile gradleTestKit()
+//  testCompile gradleTestKit()
+  testCompile gradleApi()
   testCompile 'junit:junit:4.11'
 }
 

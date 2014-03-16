@@ -19,13 +19,19 @@ class JDevJprOJDeployPlugin implements Plugin<Project>
 
     jpr = new File(project.jprFile as String)
     def deployProfiles = helper.getDeploymentProfileNames( jpr)
+    def workspacePath = ""
+    if (project.hasProperty("workspaceFile")){
     //TODO: deduce this properly
-    def workspacePath = helper.deduceWorkspaceFromDependencies(jpr)[0]
-
+      def workspacePaths = helper.getSourceOwnerURLFromDependencies(jpr)
+      assert !workspacePaths.isEmpty()
+      workspacePath = workspacePaths.asList().first()
+    } else {
+      workspacePath = project.workspaceFile
+    }
     deployProfiles.each{profileNameValue ->
         JDevOJDeployTask task =project.task("ojdeploy_${profileNameValue}", type:JDevOJDeployTask)
         task.configure {
-          workspace = file(workspacePath)
+          workspace = project.file(workspacePath)
           profileName = profileNameValue
           jprFile = jpr
         }
