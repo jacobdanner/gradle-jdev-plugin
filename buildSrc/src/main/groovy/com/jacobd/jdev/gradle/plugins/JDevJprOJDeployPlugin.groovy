@@ -41,6 +41,7 @@ class JDevJprOJDeployPlugin implements Plugin<Project>
       JDevOJDeployTask task = project.task("ojdeploy_all", type: JDevOJDeployTask)
       task.configure {
         workspace = file(workspacePath)
+        profileName = "*"
         jprFile = jpr
       }
     }

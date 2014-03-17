@@ -337,32 +337,36 @@ class JprFileHelper
     println "PATHASH->$pathHash"
     def ftAll = pathHash.collect { h ->
       println "H -> ${h.children().size()}"
-      def dirPath = h.list.findAll { it.@n.text() == "url-path" }.url.collect { it.@path.text() }
+      def urlPath = h.list.find{ it.@n.text() == "url-path" }
+//      println XmlUtil.serialize(urlPath)
+//      println urlPath.name()
+//      println urlPath.attributes()
+      def dirPath = urlPath.url.collect { it.@path.text() }
+     assert !dirPath.isEmpty()
       println "DIRPATH -> ${dirPath}"
-      def paths = h.list.findAll { it.@n.text() == "pattern-filters" }.string.collect { it.@v.text() }
+      def vals = h.list.find{ it.@n.text() == "pattern-filters" }
+//      println XmlUtil.serialize(vals)
+//      println vals.name()
+//      println vals.attributes()
+
+      def paths = vals.string.collect { it.@v.text() }
       println "PATHS: " + paths
       def includes = paths.findAll { it.startsWith("+") }.collect { String p -> p.substring(1) }
       println "INCLUDES ->" + includes
       def excludes = paths.findAll { it.startsWith("-") }.collect { String p -> p.substring(1) }
       println "EXCLUDES ->" + excludes
 
-      FileTree ft = project.fileTree(dir: dirPath, include: includes, exclude: excludes)
-      /*
+      //FileTree ft = project.fileTree(dir: dirPath, include: includes, exclude: excludes)
       FileTree ft = project.fileTree(dirPath)
       includes.each{ inc -> ft.include(inc)}
       excludes.each { exc -> ft.exclude(exc)}
-      */
+
       println "FT -> ${ft}"
       ft
 
     }
     println "FTALL -> $ftAll"
     return ftAll
-  }
-
-  SourceSet getProjectSourcesAsSourceSet(File jpr, Project project)
-  {
-    //throw
   }
 
   Set<String> getDeploymentProfileNames(File jprFile)

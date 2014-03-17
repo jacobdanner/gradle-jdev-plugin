@@ -34,7 +34,7 @@ Project project = builder.build()
   
 def pathHash = getHashFromJpr(jpr, JPR_SRC_PATH).hash.find{it.@n.text() == "javaContentSet"}.list.hash.collect{it}
 println "PATHASH->$pathHash"    
-pathHash.collect{ h ->
+def ftAll = pathHash.collect{ h ->
   println "H -> ${h.children().size()}"
       def dirPath = h.list.findAll{ it.@n.text() == "url-path"}.url.collect{it.@path.text()}
       println "DIRPATH -> ${dirPath}"
@@ -55,13 +55,14 @@ pathHash.collect{ h ->
       ft
       
     }
+println "FTALL -> $ftAll"
+    
+def x = getHashFromJpr(jprFile, JPR_DEPENDENCY_CONFIGURATION)
 
- def x = getHashFromJpr(jprFile, JPR_DEPENDENCY_CONFIGURATION)
- 
- println "${XmlUtil.serialize(x)}"
- def r = x.breadthFirst().findAll {
-      it.@n.text() == "sourceOwnerURL"
-    }
- println "R: ${r.toString()}"
- println "${XmlUtil.serialize(r)}"
+//println "${XmlUtil.serialize(x)}"
+def r = x.breadthFirst().findAll {
+  it.@n.text() == "sourceOwnerURL"
+}
+//println "R: ${r.toString()}"
+ //println "${XmlUtil.serialize(r)}"
  

@@ -12,14 +12,13 @@ import static org.junit.Assert.assertTrue
  */
 class JDevOJDeployTaskTest
 {
-  /*
-  @Test
-  public void canAddTaskToProject()
+  @Test(expected = MissingPropertyException)
+  public void missingPropertiesCannotAddTaskToProject()
   {
     Task task = createDeployTask()
     assertTrue(task instanceof JDevOJDeployTask)
   }
-
+  /*
   @Test(expected=AssertionError.class)
   public void verifyRequiresOracleHome()
   {
