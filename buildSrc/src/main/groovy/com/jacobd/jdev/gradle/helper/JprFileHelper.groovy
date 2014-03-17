@@ -39,6 +39,9 @@ class JprFileHelper
   //webappDirName
   //static final String JPR_DEFAULT_
 
+  // TODO: add compilation options via the java plugin compileJava options
+  // http://www.gradle.org/docs/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html
+
   /**
    * Returns the name of the project. For example, a project called
    * "foo.jpr" would return "foo" from this method.
