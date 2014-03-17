@@ -18,6 +18,7 @@ class JprFileHelper
 
   final static String JPR_OUTPUT_DIR = "oracle.jdevimpl.config.JProjectPaths"
   final static String JPR_SRC_PATH = "oracle.jdeveloper.model.PathsConfiguration"
+  final static String JPR_RESOURCEPATH = "oracle.ide.model.ResourcePaths"
   final static String JPR_DEP_PROFILES = "oracle.jdeveloper.deploy.dt.DeploymentProfiles"
   final static String JPR_DEFAULT_PKG = "defaultPackage"
   final static String JPR_TECH_SCOPES = "oracle.ide.model.TechnologyScopeConfiguration"
@@ -368,6 +369,48 @@ class JprFileHelper
     println "FTALL -> $ftAll"
     return ftAll
   }
+
+  Set<FileTree> getProjectResourcesAsFileTrees(File jpr, Project project)
+  {
+
+    def pathHash = getHashFromJpr(jpr, JPR_RESOURCEPATH).hash.find { it.@n.text() == "resourcesContentSet" }.list.hash.collect {
+      it
+    }
+    println "PATHASH->$pathHash"
+    def ftAll = pathHash.collect { h ->
+      println "H -> ${h.children().size()}"
+      def urlPath = h.list.find { it.@n.text() == "url-path" }
+//      println XmlUtil.serialize(urlPath)
+//      println urlPath.name()
+//      println urlPath.attributes()
+      def dirPath = urlPath.url.collect { it.@path.text() }
+      assert !dirPath.isEmpty()
+      println "RESOURCE PATH -> ${dirPath}"
+      def vals = h.list.find { it.@n.text() == "pattern-filters" }
+//      println XmlUtil.serialize(vals)
+//      println vals.name()
+//      println vals.attributes()
+
+      def paths = vals.string.collect { it.@v.text() }
+      println "PATHS: " + paths
+      def includes = paths.findAll { it.startsWith("+") }.collect { String p -> p.substring(1) }
+      println "INCLUDES ->" + includes
+      def excludes = paths.findAll { it.startsWith("-") }.collect { String p -> p.substring(1) }
+      println "EXCLUDES ->" + excludes
+
+      //FileTree ft = project.fileTree(dir: dirPath, include: includes, exclude: excludes)
+      FileTree ft = project.fileTree(dirPath)
+      includes.each { inc -> ft.include(inc) }
+      excludes.each { exc -> ft.exclude(exc) }
+
+      println "FT -> ${ft}"
+      ft
+
+    }
+    println "FTALL -> $ftAll"
+    return ftAll
+  }
+
 
   Set<String> getDeploymentProfileNames(File jprFile)
   {

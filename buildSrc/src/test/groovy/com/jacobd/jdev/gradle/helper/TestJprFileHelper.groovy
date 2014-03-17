@@ -157,10 +157,20 @@ class TestJprFileHelper extends GroovyTestCase
   public void testGetProjectSourcesAsFileTrees()
   {
     def (File jprFile, Project project) = setup_test_impl(multiSrcJprProj)
-    //def jprFile2 = new File("E:/groovy_stuffs/gradle-projects/SimpleJDevJava/buildSrc/src/test/resources/TestJwsPlugin/SimpleJDevJava/JavaAppMultiSrc/JavaAppMultiSrc.jpr")
     Set<FileTree> ws = jfh.getProjectSourcesAsFileTrees(jprFile, project)
     assert !ws.empty
     assert ws.every{ it.dir }
+    // TODO: add additional validations here
+  }
+
+
+  @Test
+  public void testGetProjectResourcesAsFileTrees()
+  {
+    def (File jprFile, Project project) = setup_test_impl("src/test/resources/TestJwsPlugin/SimpleJDevJava/ProjectResourcePathTest.jpr")
+    Set<FileTree> ws = jfh.getProjectResourcesAsFileTrees(jprFile, project)
+    assert !ws.empty
+    assert ws.every { it.dir }
   }
 
   @Test
