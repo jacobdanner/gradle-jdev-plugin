@@ -153,6 +153,7 @@ class TestJprFileHelper extends GroovyTestCase
 
   }
 
+  /*
   @Test
   public void testGetProjectSourcesAsFileTrees()
   {
@@ -161,17 +162,27 @@ class TestJprFileHelper extends GroovyTestCase
     assert !ws.empty
     assert ws.every{ it.dir }
     // TODO: add additional validations here
+
+    def (File jprFileSimple, Project projectSimple) = setup_test_impl(extJprProj)
+    Set<String> ws2 = jfh.getProjectSourcesAsFileTrees(jprFileSimple)
+    assert !ws.empty
   }
 
 
   @Test
   public void testGetProjectResourcesAsFileTrees()
   {
-    def (File jprFile, Project project) = setup_test_impl("src/test/resources/TestJwsPlugin/SimpleJDevJava/ProjectResourcePathTest.jpr")
+    def (File jprFile, Project project) = setup_test_impl("src/test/resources/TestJwsPlugin/ProjectResourcePathTest.jpr")
     Set<FileTree> ws = jfh.getProjectResourcesAsFileTrees(jprFile, project)
     assert !ws.empty
     assert ws.every { it.dir }
-  }
+
+    def (File jprFileSimple, Project projectSimple) = setup_test_impl("src/test/resources/TestJwsPlugin/ProjectResourcePathMultiFolderTest.jpr")
+    Set<FileTree> ws2 = jfh.getProjectResourcesAsFileTrees(jprFileSimple, projectSimple)
+    assert !ws2.empty
+    assert ws2.every { it.dir }
+
+  }*/
 
   @Test
   public void testGetSourceOwnerURLFromDependencies()
